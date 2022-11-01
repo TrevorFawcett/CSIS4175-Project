@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "C:\\Users\\300291654\\.gradle\\daemon\\7.3.3\\com.example.csis4175choose2help.app-mergeDebugResources-4:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\300291654\\.gradle\\daemon\\7.3.3\\com.example.csis4175choose2help.app-main-7:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\300291654\\.gradle\\daemon\\7.3.3\\com.example.csis4175choose2help.app-mergeDebugResources-4:\\layout\\fragment_notifications.xml",
+        "source": "C:\\Users\\300291654\\.gradle\\daemon\\7.3.3\\com.example.csis4175choose2help.app-main-7:\\layout\\fragment_notifications.xml"
+    },
+    {
+        "merged": "com.example.csis4175choose2help.app-mergeDebugResources-4:/layout/activity_main.xml",
+        "source": "com.example.csis4175choose2help.app-main-7:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\300291654\\.gradle\\daemon\\7.3.3\\com.example.csis4175choose2help.app-mergeDebugResources-4:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\300291654\\.gradle\\daemon\\7.3.3\\com.example.csis4175choose2help.app-main-7:\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "com.example.csis4175choose2help.app-mergeDebugResources-4:/layout/fragment_home.xml",
+        "source": "com.example.csis4175choose2help.app-main-7:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\300291654\\.gradle\\daemon\\7.3.3\\com.example.csis4175choose2help.app-mergeDebugResources-4:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\300291654\\.gradle\\daemon\\7.3.3\\com.example.csis4175choose2help.app-main-7:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\300291654\\.gradle\\daemon\\7.3.3\\com.example.csis4175choose2help.app-mergeDebugResources-4:\\layout\\fragment_account.xml",
+        "source": "C:\\Users\\300291654\\.gradle\\daemon\\7.3.3\\com.example.csis4175choose2help.app-main-7:\\layout\\fragment_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\300291654\\.gradle\\daemon\\7.3.3\\com.example.csis4175choose2help.app-mergeDebugResources-4:\\layout\\fragment_dashboard.xml",
+        "source": "C:\\Users\\300291654\\.gradle\\daemon\\7.3.3\\com.example.csis4175choose2help.app-main-7:\\layout\\fragment_dashboard.xml"
+    }
+]
