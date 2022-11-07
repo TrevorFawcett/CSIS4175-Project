@@ -2487,6 +2487,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_baseline_supervised_user_circle_24
 drawable ic_clock_black_24dp
 drawable ic_dashboard_black_24dp
 drawable ic_home_black_24dp
@@ -2708,6 +2709,8 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
+id donationDetailRecyclerView
+id donationRecyclerView
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -2772,6 +2775,8 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imgUserDD
+id imgUserDL
 id imgViewAvatar
 id immediateStop
 id included
@@ -2908,6 +2913,8 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recyclerView_detail_item
+id recyclerView_item
 id reverseSawtooth
 id right
 id rightToLeft
@@ -3029,6 +3036,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id txtDetailTitleDD
+id txtDonationTitleDD
+id txtDonationTitleDL
 id txtViewLogOut
 id txtViewNavDonationHistory
 id txtViewNavDonationLinks
@@ -3041,6 +3051,8 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userNameDD
+id userNameDL
 id username
 id vertical_only
 id view_offset_helper
@@ -3152,6 +3164,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_donation_details
+layout activity_donation_links
 layout activity_login
 layout activity_main
 layout custom_dialog
@@ -3228,6 +3242,8 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout recyclerview_donation_detail_item
+layout recyclerview_donation_item
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -3299,6 +3315,9 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string defaultUserName
+string donationDetailTitle
+string donationTitles
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
@@ -3397,6 +3416,7 @@ string title_activity_login
 string title_dashboard
 string title_home
 string title_notifications
+string txtDonationDetail
 string user_email
 string user_name
 string welcome

@@ -6,81 +6,107 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml
+8-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="32" />
-9-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml
+9-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:6:5-30:19
+11-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:6:5-44:19
 12        android:allowBackup="true"
-12-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:7:9-35
+12-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:7:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.7.0] C:\Users\300291654\.gradle\caches\transforms-3\0c734a8f9451ded3159b05d46fc9a23a\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+13-->[androidx.core:core:1.7.0] C:\Users\ksun0\.gradle\caches\transforms-3\0c734a8f9451ded3159b05d46fc9a23a\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 14        android:dataExtractionRules="@xml/data_extraction_rules"
-14-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:8:9-65
+14-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:8:9-65
 15        android:debuggable="true"
 16        android:fullBackupContent="@xml/backup_rules"
-16-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:9:9-54
+16-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:9:9-54
 17        android:icon="@mipmap/ic_launcher"
-17-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:10:9-43
+17-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:10:9-43
 18        android:label="@string/app_name"
-18-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:11:9-41
+18-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:11:9-41
 19        android:roundIcon="@mipmap/ic_launcher_round"
-19-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:12:9-54
+19-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:12:9-54
 20        android:supportsRtl="true"
-20-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:13:9-35
+20-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:13:9-35
 21        android:testOnly="true"
 22        android:theme="@style/Theme.CSIS4175Choose2Help" >
-22-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:14:9-57
+22-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:14:9-57
 23        <activity
-23-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:16:9-19:60
-24            android:name="com.example.csis4175choose2help.ui.login.LoginActivity"
-24-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:17:13-51
-25            android:exported="false"
-25-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:18:13-37
-26            android:label="@string/title_activity_login" />
-26-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:19:13-57
-27        <activity
-27-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:20:9-29:20
-28            android:name="com.example.csis4175choose2help.MainActivity"
-28-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:21:13-41
-29            android:exported="true"
-29-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:22:13-36
-30            android:label="@string/app_name" >
-30-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:23:13-45
-31            <intent-filter>
-31-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:24:13-28:29
-32                <action android:name="android.intent.action.MAIN" />
-32-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:25:17-69
-32-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:25:25-66
-33
-34                <category android:name="android.intent.category.LAUNCHER" />
-34-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:27:17-77
-34-->C:\Temp\CSIS4175-Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:27:27-74
-35            </intent-filter>
+23-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:16:9-22:20
+24            android:name="com.example.csis4175choose2help.DonationDetailsActivity"
+24-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:17:13-52
+25            android:exported="false" >
+25-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:18:13-37
+26            <meta-data
+26-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:19:13-21:36
+27                android:name="android.app.lib_name"
+27-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:20:17-52
+28                android:value="" />
+28-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:21:17-33
+29        </activity>
+30        <activity
+30-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:23:9-29:20
+31            android:name="com.example.csis4175choose2help.DonationLinksActivity"
+31-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:24:13-50
+32            android:exported="false" >
+32-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:25:13-37
+33            <meta-data
+33-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:19:13-21:36
+34                android:name="android.app.lib_name"
+34-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:20:17-52
+35                android:value="" />
+35-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:21:17-33
 36        </activity>
-37
-38        <provider
-38-->[androidx.emoji2:emoji2:1.0.0] C:\Users\300291654\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-39            android:name="androidx.startup.InitializationProvider"
-39-->[androidx.emoji2:emoji2:1.0.0] C:\Users\300291654\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
-40            android:authorities="com.example.csis4175choose2help.androidx-startup"
-40-->[androidx.emoji2:emoji2:1.0.0] C:\Users\300291654\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
-41            android:exported="false" >
-41-->[androidx.emoji2:emoji2:1.0.0] C:\Users\300291654\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
-42            <meta-data
-42-->[androidx.emoji2:emoji2:1.0.0] C:\Users\300291654\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-43                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-43-->[androidx.emoji2:emoji2:1.0.0] C:\Users\300291654\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
-44                android:value="androidx.startup" />
-44-->[androidx.emoji2:emoji2:1.0.0] C:\Users\300291654\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
-45            <meta-data
-45-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\300291654\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-46                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-46-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\300291654\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-47                android:value="androidx.startup" />
-47-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\300291654\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-48        </provider>
-49    </application>
-50
-51</manifest>
+37        <activity
+37-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:30:9-33:60
+38            android:name="com.example.csis4175choose2help.ui.login.LoginActivity"
+38-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:31:13-51
+39            android:exported="false"
+39-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:32:13-37
+40            android:label="@string/title_activity_login" />
+40-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:33:13-57
+41        <activity
+41-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:34:9-43:20
+42            android:name="com.example.csis4175choose2help.MainActivity"
+42-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:35:13-41
+43            android:exported="true"
+43-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:36:13-36
+44            android:label="@string/app_name" >
+44-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:37:13-45
+45            <intent-filter>
+45-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:38:13-42:29
+46                <action android:name="android.intent.action.MAIN" />
+46-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:39:17-69
+46-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:39:25-66
+47
+48                <category android:name="android.intent.category.LAUNCHER" />
+48-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:41:17-77
+48-->C:\temp\fall2022\csis4175\github\CSIS4175_Project\CSIS4175choose2help\app\src\main\AndroidManifest.xml:41:27-74
+49            </intent-filter>
+50        </activity>
+51
+52        <provider
+52-->[androidx.emoji2:emoji2:1.0.0] C:\Users\ksun0\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+53            android:name="androidx.startup.InitializationProvider"
+53-->[androidx.emoji2:emoji2:1.0.0] C:\Users\ksun0\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
+54            android:authorities="com.example.csis4175choose2help.androidx-startup"
+54-->[androidx.emoji2:emoji2:1.0.0] C:\Users\ksun0\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
+55            android:exported="false" >
+55-->[androidx.emoji2:emoji2:1.0.0] C:\Users\ksun0\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
+56            <meta-data
+56-->[androidx.emoji2:emoji2:1.0.0] C:\Users\ksun0\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+57                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+57-->[androidx.emoji2:emoji2:1.0.0] C:\Users\ksun0\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
+58                android:value="androidx.startup" />
+58-->[androidx.emoji2:emoji2:1.0.0] C:\Users\ksun0\.gradle\caches\transforms-3\9cb5d0b2fd275b8005e0d8fda37c4df6\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
+59            <meta-data
+59-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\ksun0\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+60                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+60-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\ksun0\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+61                android:value="androidx.startup" />
+61-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\ksun0\.gradle\caches\transforms-3\8eef53d9995d138e5396bc0361630197\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+62        </provider>
+63    </application>
+64
+65</manifest>

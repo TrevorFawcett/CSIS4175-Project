@@ -21,4 +21,13 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+<!--    Donation links and details-->
+    <string name="donationTitles">Organization List</string>
+    <string name="defaultUserName">Johanna, Han</string>
+    <string name="donationDetailTitle">Pay-it-Forward</string>
+    <string name="txtDonationDetail">What is is? Pay for a service and it will be given for free to someone in need!</string>
+    <string name="btnDonation">Donation</string>
+    <string name="btnVolunteer">Volunteer</string>
+
 </resources>

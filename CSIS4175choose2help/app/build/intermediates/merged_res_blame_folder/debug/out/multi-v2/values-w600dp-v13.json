@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.csis4175choose2help.app-mergeDebugResources-3:/values-w600dp-v13/values-w600dp-v13.xml",
+            "outputFile": "com.example.csis4175choose2help.app-mergeDebugResources-27:/values-w600dp-v13/values-w600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Temp\\CSIS4175-Project\\CSIS4175choose2help\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
+                    "source": "C:\\temp\\fall2022\\csis4175\\github\\CSIS4175_Project\\CSIS4175choose2help\\app\\src\\main\\res\\values-w600dp\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",
-                        "startOffsets": "16",
+                        "startOffsets": "17",
                         "endColumns": "57",
-                        "endOffsets": "69"
+                        "endOffsets": "70"
                     },
                     "to": {
                         "startLines": "2",

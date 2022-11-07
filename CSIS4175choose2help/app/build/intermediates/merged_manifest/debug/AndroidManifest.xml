@@ -21,6 +21,20 @@
         android:testOnly="true"
         android:theme="@style/Theme.CSIS4175Choose2Help" >
         <activity
+            android:name="com.example.csis4175choose2help.DonationDetailsActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="com.example.csis4175choose2help.DonationLinksActivity"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name="com.example.csis4175choose2help.ui.login.LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login" />

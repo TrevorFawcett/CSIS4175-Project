@@ -1,25 +1,28 @@
-#Tue Nov 01 11:55:55 PDT 2022
+#Sat Nov 05 11:29:39 PDT 2022
 path.4=13/classes.dex
 path.3=11/classes.dex
 path.2=10/classes.dex
 path.1=0/classes.dex
+renamed.8=classes9.dex
+path.8=7/classes.dex
 path.7=8/classes.dex
 path.6=5/classes.dex
 path.5=4/classes.dex
 path.0=classes.dex
-base.4=C\:\\Temp\\CSIS4175-Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.3=C\:\\Temp\\CSIS4175-Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
-base.2=C\:\\Temp\\CSIS4175-Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
-base.1=C\:\\Temp\\CSIS4175-Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.0=C\:\\Temp\\CSIS4175-Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.4=C\:\\temp\\fall2022\\csis4175\\github\\CSIS4175_Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.3=C\:\\temp\\fall2022\\csis4175\\github\\CSIS4175_Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
+base.2=C\:\\temp\\fall2022\\csis4175\\github\\CSIS4175_Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
+base.1=C\:\\temp\\fall2022\\csis4175\\github\\CSIS4175_Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.0=C\:\\temp\\fall2022\\csis4175\\github\\CSIS4175_Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
 renamed.7=classes8.dex
+base.8=C\:\\temp\\fall2022\\csis4175\\github\\CSIS4175_Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
 renamed.6=classes7.dex
-base.7=C\:\\Temp\\CSIS4175-Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
+base.7=C\:\\temp\\fall2022\\csis4175\\github\\CSIS4175_Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
 renamed.5=classes6.dex
-base.6=C\:\\Temp\\CSIS4175-Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
+base.6=C\:\\temp\\fall2022\\csis4175\\github\\CSIS4175_Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
 renamed.4=classes5.dex
-base.5=C\:\\Temp\\CSIS4175-Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
+base.5=C\:\\temp\\fall2022\\csis4175\\github\\CSIS4175_Project\\CSIS4175choose2help\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex

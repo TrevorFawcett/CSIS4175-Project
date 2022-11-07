@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.csis4175choose2help.app-mergeDebugResources-3:/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "com.example.csis4175choose2help.app-mergeDebugResources-27:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\300291654\\.gradle\\caches\\transforms-3\\f053ca72a4906620f9d7f529c412475e\\transformed\\appcompat-1.4.2\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "C:\\Users\\ksun0\\.gradle\\caches\\transforms-3\\f053ca72a4906620f9d7f529c412475e\\transformed\\appcompat-1.4.2\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
