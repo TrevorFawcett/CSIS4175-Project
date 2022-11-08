@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.csis4175choose2help.ui.login.LoginActivity;
+//import com.example.csis4175choose2help.ui.login.LoginActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,20 +41,12 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        login(this);
+        //login(this);
 
     }
 
     public void login(Context context) {
-        Button btn = findViewById(R.id.login_btn);
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(context, LoginActivity.class);
-                startActivity(myIntent);
-            }
-        });
 
     }
 
