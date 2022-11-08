@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-34:12
+ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-37:12
 MERGED from [androidx.databinding:viewbinding:7.2.1] C:\Users\300291654\.gradle\caches\transforms-3\9b000c43c967e0a17ea993fd492a9a3a\transformed\viewbinding-7.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-ui:2.3.5] C:\Users\300291654\.gradle\caches\transforms-3\b93de5d328c28208f9ed3b3f7ed222c1\transformed\navigation-ui-2.3.5\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\300291654\.gradle\caches\transforms-3\45d524e4123b2684e95ec935268a140d\transformed\material-1.6.1\AndroidManifest.xml:17:1-26:12
@@ -61,27 +61,27 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\300291654\.gradl
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\300291654\.gradle\caches\transforms-3\5d7025d8a9b098747ffc64b457148e61\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\300291654\.gradle\caches\transforms-3\77cc55a86862b3b4d763e452b7a0df0e\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\300291654\.gradle\caches\transforms-3\35e88396bca12b7fe79596b0c974640b\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-37:12
 	package
 		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:4:5-46
 		INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml
-		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-34:12
+		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-37:12
 		INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml
-		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-34:12
+		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:1-37:12
 		INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:6:5-32:19
+ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:6:5-35:19
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\300291654\.gradle\caches\transforms-3\45d524e4123b2684e95ec935268a140d\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\300291654\.gradle\caches\transforms-3\45d524e4123b2684e95ec935268a140d\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\300291654\.gradle\caches\transforms-3\22a76ca940970daa99d0d01770b549de\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -131,35 +131,35 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\300291654\.gradle\
 	android:dataExtractionRules
 		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:8:9-65
 activity#com.example.csis4175choose2help.LoginActivity
-ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:16:9-18:40
+ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:16:9-25:20
 	android:exported
-		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:18:13-37
+		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:18:13-36
 	android:name
 		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:17:13-42
-activity#com.example.csis4175choose2help.SignupActivity
-ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:19:9-27:20
-	android:exported
-		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:21:13-36
-	android:name
-		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:20:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:22:13-26:29
+ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:19:13-23:29
 action#android.intent.action.MAIN
-ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:23:17-69
+ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:23:25-66
+		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:25:17-77
+ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:25:27-74
-activity#com.example.csis4175choose2help.MainActivity
-ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:28:9-31:57
-	android:label
-		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:31:13-45
+		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:22:27-74
+activity#com.example.csis4175choose2help.SignupActivity
+ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:26:9-30:20
 	android:exported
-		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:30:13-36
+		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:28:13-36
 	android:name
-		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:29:13-41
+		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:27:13-43
+activity#com.example.csis4175choose2help.MainActivity
+ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:31:9-34:57
+	android:label
+		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:34:13-45
+	android:exported
+		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:33:13-36
+	android:name
+		ADDED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml:32:13-41
 uses-sdk
 INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Temp\CSIS4175choose2help\app\src\main\AndroidManifest.xml
