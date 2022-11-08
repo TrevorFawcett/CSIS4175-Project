@@ -4,7 +4,6 @@ package com.example.csis4175choose2help.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -24,17 +23,12 @@ public final class ActivityMainBinding implements ViewBinding {
   public final ConstraintLayout container;
 
   @NonNull
-  public final Button loginBtn;
-
-  @NonNull
   public final BottomNavigationView navView;
 
   private ActivityMainBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout container, @NonNull Button loginBtn,
-      @NonNull BottomNavigationView navView) {
+      @NonNull ConstraintLayout container, @NonNull BottomNavigationView navView) {
     this.rootView = rootView;
     this.container = container;
-    this.loginBtn = loginBtn;
     this.navView = navView;
   }
 
@@ -67,19 +61,13 @@ public final class ActivityMainBinding implements ViewBinding {
     missingId: {
       ConstraintLayout container = (ConstraintLayout) rootView;
 
-      id = R.id.login_btn;
-      Button loginBtn = ViewBindings.findChildViewById(rootView, id);
-      if (loginBtn == null) {
-        break missingId;
-      }
-
       id = R.id.nav_view;
       BottomNavigationView navView = ViewBindings.findChildViewById(rootView, id);
       if (navView == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, container, loginBtn, navView);
+      return new ActivityMainBinding((ConstraintLayout) rootView, container, navView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

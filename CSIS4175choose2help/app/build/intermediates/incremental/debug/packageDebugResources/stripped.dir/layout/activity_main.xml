@@ -7,14 +7,7 @@
     android:layout_height="match_parent">
 
 
-    <Button
-        android:id="@+id/login_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:text="Sign Up/Login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -39,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_btn"
+
         app:layout_constraintVertical_bias="0.846"
         app:navGraph="@navigation/mobile_navigation" />
 
