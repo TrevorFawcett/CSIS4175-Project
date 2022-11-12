@@ -33,6 +33,37 @@
     <string name="history_title">Donation History</string>
     <string name="history_txtView">Sample Donation</string>
 
+    <!--    Donation links and details-->
+    <string name="donationTitles">Organization List</string>
+    <string name="defaultUserName">Johanna, Han</string>
+    <string name="donationDetailTitle">Pay-it-Forward</string>
+    <string name="txtDonationDetail">What is is? Pay for a service and it will be given for free to someone in need!</string>
+    <string name="organizationName">Downtown Eastside Women’s Centre</string>
+    <string name="organizationDescription">DEWC provides a safe, non-judgmental environment for all women, including cis, trans and 2S, who live or work on the Downtown East Side. It supports the environment with diet, counselling, advocacy and various programs.</string>
+    <string name="organizationAddress">302 Columbia St Vancouver BC, Canada</string>
+    <string name="organizationEmail">admin@dewc.ca      |</string>
+    <string name="organizationPhone">604-681-8480</string>
+    <string name="btnDonation">Donation</string>
+    <string name="btnVolunteer">Volunteer</string>
+
+    <string name="freeServiceTitle">Free Service List</string>
+    <string name="btnRegisterService">Register Service</string>
+    <string name="RegisterFreeServiceList">Register Free Service</string>
+    <string name="exTitle">Free Coffee</string>
+    <string name="exType">Food</string>
+    <string name="exDate">YYYY-MM-DD</string>
+    <string name="exTime">e.g. 2 PM</string>
+    <string name="bnSaveService">Save</string>
+    <string name="exFreeCoffeeName">The Dugout</string>
+    <string name="exAddress">59 Powell St, Vancouver, BC V6A 1E9</string>
+    <string name="exFreeServiceDay">2022-12-24</string>
+    <string name="exFreeServiceTime">2 PM</string>
+    <string name="exFreeServiceDescription">Delicious coffee makes for a beautiful day. Enjoy the cold winter with warm coffee.</string>
+
+    <string name="btnMakeAppointment">Make Appointment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>
 

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".FreeServiceFragment">
+
+    <ImageView
+        android:id="@+id/imgFreeServiceFrg"
+        android:layout_width="138dp"
+        android:layout_height="100dp"
+        android:src="@drawable/freecoffee" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="5dp">
+
+        <TextView
+            android:id="@+id/txtFreeServiceLocationFrag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/exFreeCoffeeName"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtFreeServiceAddressFrg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/exAddress" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtFreeServiceDateFrg"
+                android:layout_width="118dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="@string/exFreeServiceDay" />
+
+            <TextView
+                android:id="@+id/txtFreeServiceTimeFrg"
+                android:layout_width="114dp"
+                android:layout_height="20dp"
+                android:paddingLeft="0dp"
+                android:text="@string/exFreeServiceTime" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtFreeServiceDescriptionFrg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/exFreeServiceDescription" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imgFreeServiceItem"
+        android:layout_width="142dp"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/freecoffee" />
+
+    <TextView
+        android:id="@+id/txtFreeServiceTitleItem"
+        android:layout_width="268dp"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/exTitle"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtFreeServiceLocationItem"
+        android:layout_width="154dp"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/exFreeCoffeeName"
+        android:textSize="14sp" />
+
+</LinearLayout>
