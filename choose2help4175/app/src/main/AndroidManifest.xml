@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Choose2help4175"
         tools:targetApi="31">
         <activity
+            android:name=".CharityMap"
+            android:exported="false" />
+        <activity
             android:name=".FreeServiceReservationActivity"
             android:exported="false">
             <meta-data
