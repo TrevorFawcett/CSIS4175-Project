@@ -9,6 +9,6 @@ public class FreeServiceListsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_free_service_lists);
+        setContentView(R.layout.activity_donation_service_lists);
     }
 }

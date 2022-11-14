@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "560695089685",
+    "firebase_url": "https://choose2help-cafdb-default-rtdb.firebaseio.com",
     "project_id": "choose2help-cafdb",
     "storage_bucket": "choose2help-cafdb.appspot.com"
   },
@@ -36,7 +37,7 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:560695089685:android:8ca4974029f0c8020dcc1c",
+        "mobilesdk_app_id": "1:560695089685:android:a3ee8a905dc602ae0dcc1c",
         "android_client_info": {
           "package_name": "com.example.csis4175choose2help"
         }

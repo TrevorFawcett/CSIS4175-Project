@@ -2,21 +2,27 @@ package com.example.choose2help4175;
 
 public class Organization {
 
-    private String ozId;
+    private String ozCode;
     private String ozName;
     private String ozDescription;
-    private int ozPhoneNumber;
+    private String ozPhoneNumber;
     private String ozEmail;
     private String ozAddress;
     private String ozCity;
     private String ozProvince;
     private String ozCountry;
     private String ozPostalCode;
+    private int ozImages;
 
     public Organization() { }
 
-    public Organization(String ozId, String ozName, String ozDescription, int ozPhoneNumber, String ozEmail, String ozAddress, String ozCity, String ozProvince, String ozCountry, String ozPostalCode) {
-        this.ozId = ozId;
+    public Organization(String ozName, int ozImages) {
+        this.ozName = ozName;
+        this.ozImages = ozImages;
+    }
+
+    public Organization(String ozCode, String ozName, String ozDescription, String ozPhoneNumber, String ozEmail, String ozAddress, String ozCity, String ozProvince, String ozCountry, String ozPostalCode, int ozImages) {
+        this.ozCode = ozCode;
         this.ozName = ozName;
         this.ozDescription = ozDescription;
         this.ozPhoneNumber = ozPhoneNumber;
@@ -26,14 +32,15 @@ public class Organization {
         this.ozProvince = ozProvince;
         this.ozCountry = ozCountry;
         this.ozPostalCode = ozPostalCode;
+        this.ozImages = ozImages;
     }
 
-    public String getOzId() {
-        return ozId;
+    public String getOzCode() {
+        return ozCode;
     }
 
-    public void setOzId(String ozId) {
-        this.ozId = ozId;
+    public void setOzCode(String ozCode) {
+        this.ozCode = ozCode;
     }
 
     public String getOzName() {
@@ -52,11 +59,11 @@ public class Organization {
         this.ozDescription = ozDescription;
     }
 
-    public int getOzPhoneNumber() {
+    public String getOzPhoneNumber() {
         return ozPhoneNumber;
     }
 
-    public void setOzPhoneNumber(int ozPhoneNumber) {
+    public void setOzPhoneNumber(String ozPhoneNumber) {
         this.ozPhoneNumber = ozPhoneNumber;
     }
 
@@ -106,5 +113,13 @@ public class Organization {
 
     public void setOzPostalCode(String ozPostalCode) {
         this.ozPostalCode = ozPostalCode;
+    }
+
+    public int getOzImages() {
+        return ozImages;
+    }
+
+    public void setOzImages(int ozImages) {
+        this.ozImages = ozImages;
     }
 }
