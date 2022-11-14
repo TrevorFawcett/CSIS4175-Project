@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,6 +24,8 @@ import java.util.List;
 
 public class DonationListsActivity extends AppCompatActivity {
 
+    private static final String TAG = DonationListsActivity.class.getSimpleName();
+
     RecyclerView recyclerView;
     TextView txtOrganizationTitle;
     Button btnBringData;
@@ -30,7 +33,7 @@ public class DonationListsActivity extends AppCompatActivity {
     OrganizationDAO dao;
 
     ArrayList<Organization> ozList = new ArrayList<>();
-    //String key = "";
+    //String ozKey = "";
 
     List<String> ozCode = new ArrayList<>(Arrays.asList("oz01", "oz02", "oz03", "oz04", "oz05"));
     List<String> ozNames = new ArrayList<>(Arrays.asList("BC Children’s Hospital","Big Brothers", "Downtown Eastside Women’s Centre", "Mom2mom", "Seva Canada"));
@@ -46,7 +49,6 @@ public class DonationListsActivity extends AppCompatActivity {
     String ozCity = "Vancouver";
     String ozProvince = "BC";
     String ozCountry = "Canada";
-
     List<Integer> ozImages = new ArrayList<>(Arrays.asList(R.drawable.childhospital, R.drawable.bigbrothers, R.drawable.dewc, R.drawable.momtomom,R.drawable.childblindness));
 
 
@@ -62,15 +64,15 @@ public class DonationListsActivity extends AppCompatActivity {
         txtOrganizationTitle.setText("Organization List");
         btnBringData.setText("Bring the List");
 
+        //initialize the DB
+        dao = new OrganizationDAO();
+
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
 
         adapter = new OrganizationAdapter(this, ozList);
 
         recyclerView.setAdapter(adapter);
-
-        //initialize the DB
-        dao = new OrganizationDAO();
 
         btnBringData.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,12 +90,12 @@ public class DonationListsActivity extends AppCompatActivity {
         dao.remove().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                Toast.makeText(DonationListsActivity.this, "Success Remove data", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "Success Remove Organization Table");
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(DonationListsActivity.this, "Fail Remove data", Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "Failed to remove Organization");
             }
         });
     }
@@ -108,12 +110,12 @@ public class DonationListsActivity extends AppCompatActivity {
            dao.createOrganization(organization).addOnSuccessListener(new OnSuccessListener<Void>() {
                @Override
                public void onSuccess(Void unused) {
-                   Toast.makeText(DonationListsActivity.this, "Success add data", Toast.LENGTH_SHORT).show();
+                   Log.d(TAG, "Success add Organization");
                }
            }).addOnFailureListener(new OnFailureListener() {
                @Override
                public void onFailure(@NonNull Exception e) {
-                   Toast.makeText(DonationListsActivity.this, "Fail to add data", Toast.LENGTH_SHORT).show();
+                   Log.e(TAG, "Failed to create Organization");
                }
            });
         }
@@ -132,7 +134,7 @@ public class DonationListsActivity extends AppCompatActivity {
 
                     Organization ozNameImage = new Organization(organization.getOzName(), organization.getOzImages());
 
-                    //key = data.getKey();
+                    //ozKey = data.getKey();
                     ozList.add(ozNameImage);
                 }
 
@@ -141,7 +143,7 @@ public class DonationListsActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Log.e(TAG, "Failed to load Organization List");
             }
         });
     }

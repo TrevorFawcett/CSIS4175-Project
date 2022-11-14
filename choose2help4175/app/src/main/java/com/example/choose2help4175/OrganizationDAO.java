@@ -7,23 +7,23 @@ import com.google.firebase.database.Query;
 
 public class OrganizationDAO {
 
-    private DatabaseReference databaseReference;
+    private DatabaseReference dbReference;
 
     public OrganizationDAO(){
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-        databaseReference = db.getReference(Organization.class.getSimpleName());
+        dbReference = db.getReference(Organization.class.getSimpleName());
     }
 
     public Task<Void> createOrganization(Organization organization){
-        return databaseReference.push().setValue(organization);
+        return dbReference.push().setValue(organization);
     }
 
     public Query get(){
-        return databaseReference;
+        return dbReference;
     }
 
     public Task<Void> remove() {
-        return databaseReference.removeValue();
+        return dbReference.removeValue();
     }
 }
