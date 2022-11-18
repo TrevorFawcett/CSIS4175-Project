@@ -39,9 +39,9 @@
     <string name="donationDetailTitle">Pay-it-Forward</string>
     <string name="txtDonationDetail">What is is? Pay for a service and it will be given for free to someone in need!</string>
     <string name="organizationName">Downtown Eastside Women’s Centre</string>
-    <string name="organizationDescription">DEWC provides a safe, non-judgmental environment for all women, including cis, trans and 2S, who live or work on the Downtown East Side. It supports the environment with diet, counselling, advocacy and various programs.</string>
+    <string name="organizationDescription">DEWC provides a safe, non-judgmental environment for all women who live or work on the Downtown East Side. It supports the environment with diet, counselling, advocacy and various programs.</string>
     <string name="organizationAddress">302 Columbia St Vancouver BC, Canada</string>
-    <string name="organizationEmail">admin@dewc.ca      |</string>
+    <string name="organizationEmail">admin@dewc.ca</string>
     <string name="organizationPhone">604-681-8480</string>
     <string name="btnDonation">Donation</string>
     <string name="btnVolunteer">Volunteer</string>

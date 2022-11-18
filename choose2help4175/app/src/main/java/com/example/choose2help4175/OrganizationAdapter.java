@@ -1,6 +1,9 @@
 package com.example.choose2help4175;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,17 +13,29 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class OrganizationAdapter extends RecyclerView.Adapter<OrganizationAdapter.organizationViewHolder> {
 
-    private Context context;
+    private static final String TAG = OrganizationAdapter.class.getSimpleName();
 
-    ArrayList<Organization> ozArrayList = new ArrayList<>();
+    private Context context;
+    public ListItemListener mListener;
+    OrganizationDAO dao;
+
+    ArrayList<Organization> ozArrayList;
 
     public OrganizationAdapter(Context context,ArrayList<Organization> ozArrayList) {
         this.context = context;
         this.ozArrayList = ozArrayList;
+    }
+
+    public void setListener(ListItemListener listener) {
+        mListener = listener;
     }
 
     @NonNull
@@ -33,12 +48,20 @@ public class OrganizationAdapter extends RecyclerView.Adapter<OrganizationAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull  organizationViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull  organizationViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
 //        Organization organization = ozArrayList.get(holder.getBindingAdapterPosition());
 
         holder.imageView.setImageResource(ozArrayList.get(position).getOzImages());
         holder.textView.setText(ozArrayList.get(position).getOzName());
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onListItemClick(position);
+            }
+        });
     }
 
     @Override
@@ -58,5 +81,9 @@ public class OrganizationAdapter extends RecyclerView.Adapter<OrganizationAdapte
             textView = itemView.findViewById(R.id.txtDonationNameItem);
 
         }
+    }
+
+    public interface ListItemListener {
+        void onListItemClick(int position);
     }
 }

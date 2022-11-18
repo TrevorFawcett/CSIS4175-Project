@@ -13,6 +13,8 @@ public class Organization {
     private String ozCountry;
     private String ozPostalCode;
     private int ozImages;
+    private String ozDonationURL;
+    private String ozVolunteerURL;
 
     public Organization() { }
 
@@ -20,8 +22,7 @@ public class Organization {
         this.ozName = ozName;
         this.ozImages = ozImages;
     }
-
-    public Organization(String ozCode, String ozName, String ozDescription, String ozPhoneNumber, String ozEmail, String ozAddress, String ozCity, String ozProvince, String ozCountry, String ozPostalCode, int ozImages) {
+    public Organization(String ozCode, String ozName, String ozDescription, String ozPhoneNumber, String ozEmail, String ozAddress, String ozCity, String ozProvince, String ozCountry, String ozPostalCode, int ozImages, String ozDonationURL, String ozVolunteerURL) {
         this.ozCode = ozCode;
         this.ozName = ozName;
         this.ozDescription = ozDescription;
@@ -33,6 +34,8 @@ public class Organization {
         this.ozCountry = ozCountry;
         this.ozPostalCode = ozPostalCode;
         this.ozImages = ozImages;
+        this.ozDonationURL = ozDonationURL;
+        this.ozVolunteerURL = ozVolunteerURL;
     }
 
     public String getOzCode() {
@@ -121,5 +124,21 @@ public class Organization {
 
     public void setOzImages(int ozImages) {
         this.ozImages = ozImages;
+    }
+
+    public String getOzDonationURL() {
+        return ozDonationURL;
+    }
+
+    public void setOzDonationURL(String ozDonationURL) {
+        this.ozDonationURL = ozDonationURL;
+    }
+
+    public String getOzVolunteerURL() {
+        return ozVolunteerURL;
+    }
+
+    public void setOzVolunteerURL(String ozVolunteerURL) {
+        this.ozVolunteerURL = ozVolunteerURL;
     }
 }
