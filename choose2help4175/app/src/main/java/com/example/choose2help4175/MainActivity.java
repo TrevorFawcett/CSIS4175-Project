@@ -1,6 +1,8 @@
 package com.example.choose2help4175;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
@@ -16,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.choose2help4175.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
@@ -41,12 +43,47 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_donations, R.id.nav_offerservice)
+                R.id.nav_home, R.id.nav_donations, R.id.nav_offerservice, R.id.nav_donationhistory)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(MenuItem menuItem) {
+
+        menuItem.setChecked(true);
+
+        switch (menuItem.getItemId()) {
+            case R.id.nav_home:
+                // Need to change this to another activity.
+                // I can't redirect to map because the app crashes.
+                Intent switchToMapIntent = new Intent(this, MainActivity.class);
+                startActivity(switchToMapIntent);
+
+                break;
+            case R.id.nav_donations:
+                Intent switchToDonationsIntent = new Intent(this, DonationListsActivity.class);
+                startActivity(switchToDonationsIntent);
+
+                break;
+            case R.id.nav_offerservice:
+
+                Intent switchToFreeServiceIntent = new Intent(this, FreeServiceListsActivity.class);
+                startActivity(switchToFreeServiceIntent);
+                break;
+
+            case R.id.nav_donationhistory:
+
+                Intent switchToHistoryIntent = new Intent(this, HistoryActivity.class);
+                startActivity(switchToHistoryIntent);
+                break;
+        }
+
+        return true;
     }
 
     @Override

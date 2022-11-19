@@ -114,17 +114,17 @@ public class DonationListsActivity extends AppCompatActivity implements Organiza
             Organization organization = new Organization(ozCode.get(i), ozNames.get(i), ozDescription.get(i), ozPhoneNumber.get(i), ozEmail.get(i), ozAddress.get(i),
                     ozCity, ozProvince, ozCountry, ozPostalCode.get(i), ozImages.get(i), ozDonationURL.get(i), ozVolunteerURL.get(i));
 
-           dao.createOrganization(organization).addOnSuccessListener(new OnSuccessListener<Void>() {
-               @Override
-               public void onSuccess(Void unused) {
-                   Log.d(TAG, "Success add Organization");
-               }
-           }).addOnFailureListener(new OnFailureListener() {
-               @Override
-               public void onFailure(@NonNull Exception e) {
-                   Log.e(TAG, "Failed to create Organization");
-               }
-           });
+            dao.createOrganization(organization).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void unused) {
+                    Log.d(TAG, "Success add Organization");
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.e(TAG, "Failed to create Organization");
+                }
+            });
         }
     }
 

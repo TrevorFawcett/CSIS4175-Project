@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group
         android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_toHome"
             android:icon="@drawable/ic_baseline_home_24"
             android:title="Home"
-            />
+        />
         <item
-            android:id="@+id/nav_donations"
+            android:id="@+id/nav_ToDonations"
             android:icon="@drawable/ic_baseline_monetization_on_24"
             android:title="Quick Donations"
             />
         <item
-            android:id="@+id/nav_offerservice"
+            android:id="@+id/nav_ToFreeService"
             android:icon="@drawable/ic_baseline_handyman_24"
             android:title="Free Service"
             />
         <item
-            android:id="@+id/nav_donationhistory"
+            android:id="@+id/nav_ToHistory"
             android:icon="@drawable/ic_baseline_history_24"
-            android:title="History"
+            android:title="Home"
             />
 
 
 
     </group>
+
 </menu>

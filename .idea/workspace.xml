@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69fe0e1b-fe76-4592-8f2e-e74bc3a489a6" name="Changes" comment="" />
+    <list default="true" id="69fe0e1b-fe76-4592-8f2e-e74bc3a489a6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/CSIS4175-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CSIS4175-Project.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
