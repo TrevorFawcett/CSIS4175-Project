@@ -25,8 +25,6 @@ public class OrganizationAdapter extends RecyclerView.Adapter<OrganizationAdapte
 
     private Context context;
     public ListItemListener mListener;
-    OrganizationDAO dao;
-
     ArrayList<Organization> ozArrayList;
 
     public OrganizationAdapter(Context context,ArrayList<Organization> ozArrayList) {

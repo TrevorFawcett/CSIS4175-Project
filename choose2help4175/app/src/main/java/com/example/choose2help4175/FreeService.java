@@ -4,77 +4,87 @@ public class FreeService {
 
     private String fServiceId;
     private String fServiceName;
-    private String fServiceType;
+    private int imgFServiceType;
     private String fServiceAddress;
+    private String fServiceLocation;
     private int fServiceDate;
     private int fServiceTime;
     private String fServiceDescription;
 
     public FreeService() { }
 
-    public FreeService(String fServiceId, String fServiceName, String fServiceType, String fServiceAddress, int fServiceDate, int fServiceTime, String fServiceDescription) {
+    public FreeService(String fServiceId, String fServiceName, int imgFServiceType, String fServiceAddress, String fServiceLocation, int fServiceDate, int fServiceTime, String fServiceDescription) {
         this.fServiceId = fServiceId;
         this.fServiceName = fServiceName;
-        this.fServiceType = fServiceType;
+        this.imgFServiceType = imgFServiceType;
         this.fServiceAddress = fServiceAddress;
+        this.fServiceLocation = fServiceLocation;
         this.fServiceDate = fServiceDate;
         this.fServiceTime = fServiceTime;
         this.fServiceDescription = fServiceDescription;
     }
 
-    public String getFServiceId() {
+    public String getfServiceId() {
         return fServiceId;
     }
 
-    public void setFServiceId(String fServiceId) {
+    public void setfServiceId(String fServiceId) {
         this.fServiceId = fServiceId;
     }
 
-    public String getFServiceName() {
+    public String getfServiceName() {
         return fServiceName;
     }
 
-    public void setFServiceName(String fServiceName) {
+    public void setfServiceName(String fServiceName) {
         this.fServiceName = fServiceName;
     }
 
-    public String getFServiceType() {
-        return fServiceType;
+    public int getImgFServiceType() {
+        return imgFServiceType;
     }
 
-    public void setFServiceType(String fServiceType) {
-        this.fServiceType = fServiceType;
+    public void setImgFServiceType(int imgFServiceType) {
+        this.imgFServiceType = imgFServiceType;
     }
 
-    public String getFServiceAddress() {
+    public String getfServiceAddress() {
         return fServiceAddress;
     }
 
-    public void setFServiceAddress(String fServiceAddress) {
+    public void setfServiceAddress(String fServiceAddress) {
         this.fServiceAddress = fServiceAddress;
     }
 
-    public int getFServiceDate() {
+    public String getfServiceLocation() {
+        return fServiceLocation;
+    }
+
+    public void setfServiceLocation(String fServiceLocation) {
+        this.fServiceLocation = fServiceLocation;
+    }
+
+    public int getfServiceDate() {
         return fServiceDate;
     }
 
-    public void setFServiceDate(int fServiceDate) {
+    public void setfServiceDate(int fServiceDate) {
         this.fServiceDate = fServiceDate;
     }
 
-    public int getFServiceTime() {
+    public int getfServiceTime() {
         return fServiceTime;
     }
 
-    public void setFServiceTime(int fServiceTime) {
+    public void setfServiceTime(int fServiceTime) {
         this.fServiceTime = fServiceTime;
     }
 
-    public String getFServiceDescription() {
+    public String getfServiceDescription() {
         return fServiceDescription;
     }
 
-    public void setFServiceDescription(String fServiceDescription) {
+    public void setfServiceDescription(String fServiceDescription) {
         this.fServiceDescription = fServiceDescription;
     }
 }

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterFreeServiceActivity">
+
+    <TextView
+        android:id="@+id/txtTitleRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="@string/RegisterFreeServiceList"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtEventNameLabelRE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Service Name:"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleRegister" />
+
+    <TextView
+        android:id="@+id/txtEventTypeLabelRE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Service Type:"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEventNameLabelRE" />
+
+    <EditText
+        android:id="@+id/txtEventNameRE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/exTitle"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/txtEventNameLabelRE"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitleRegister" />
+
+    <EditText
+        android:id="@+id/txtEventDateRE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/exDate"
+        android:inputType="numberSigned"
+        app:layout_constraintStart_toEndOf="@+id/txtEventDateLabelRE"
+        app:layout_constraintTop_toBottomOf="@+id/rdbServiceType2" />
+
+    <Button
+        android:id="@+id/btnServiceRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@android:color/holo_red_light"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:foregroundTint="@android:color/holo_red_light"
+        android:text="@string/bnSaveService"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEventDescriptionRE" />
+
+    <TextView
+        android:id="@+id/txtEventDateLabelRE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:text="Date:"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEventTypeLabelRE" />
+
+    <EditText
+        android:id="@+id/txtEventLocationRE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/txtEventLocationLabelRE"
+        app:layout_constraintTop_toBottomOf="@+id/txtEventTimeRE" />
+
+    <EditText
+        android:id="@+id/txtEventDescriptionRE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/txtEventDescriptionLabelRE"
+        app:layout_constraintTop_toBottomOf="@+id/txtEventLocationRE" />
+
+    <TextView
+        android:id="@+id/txtEventDescriptionLabelRE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Description:"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEventLocationLabelRE" />
+
+    <EditText
+        android:id="@+id/txtEventTimeRE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/exTime"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/txtEventTimeLabelRE"
+        app:layout_constraintTop_toBottomOf="@+id/txtEventDateRE" />
+
+    <TextView
+        android:id="@+id/txtEventLocationLabelRE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Address: "
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEventTimeLabelRE" />
+
+    <TextView
+        android:id="@+id/txtEventTimeLabelRE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Time:"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEventDateLabelRE" />
+
+    <RadioGroup
+        android:id="@+id/rdbServiceType1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEventNameRE">
+
+        <RadioButton
+            android:id="@+id/rdbSTypeFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:text="@string/exTypeFood" />
+
+        <RadioButton
+            android:id="@+id/rdbTypeAmenities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/exTypeAmenities" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rdbServiceType2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rdbServiceType1">
+
+        <RadioButton
+            android:id="@+id/rdbSTypeCultural"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="14dp"
+            android:text="@string/exTypeCultural" />
+
+        <RadioButton
+            android:id="@+id/rdbSTypeEducational"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/exTypeEducational" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

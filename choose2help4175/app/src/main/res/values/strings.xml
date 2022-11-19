@@ -51,6 +51,10 @@
     <string name="RegisterFreeServiceList">Register Free Service</string>
     <string name="exTitle">Free Coffee</string>
     <string name="exType">Food</string>
+    <string name="exTypeFood">Food</string>
+    <string name="exTypeAmenities">Amenities</string>
+    <string name="exTypeCultural">Cultural</string>
+    <string name="exTypeEducational">Educational</string>
     <string name="exDate">YYYY-MM-DD</string>
     <string name="exTime">e.g. 2 PM</string>
     <string name="bnSaveService">Save</string>
