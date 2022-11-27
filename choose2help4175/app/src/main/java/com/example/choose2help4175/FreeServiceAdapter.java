@@ -69,7 +69,7 @@ public class FreeServiceAdapter extends RecyclerView.Adapter<FreeServiceAdapter.
 
             imgServiceType = itemView.findViewById(R.id.imgFreeServiceItem);
             txtServiceTitle = itemView.findViewById(R.id.txtFreeServiceTitleItem);
-            txtServiceDate = itemView.findViewById(R.id.txtFreeServiceLocationItem);
+            txtServiceDate = itemView.findViewById(R.id.txtFreeServiceDate);
         }
     }
 

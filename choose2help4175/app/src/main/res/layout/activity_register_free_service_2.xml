@@ -10,7 +10,7 @@
         android:id="@+id/txtTitleRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="32dp"
         android:text="@string/RegisterFreeServiceList"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -59,47 +59,32 @@
         android:id="@+id/txtEventDateRE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/exDate"
-        android:inputType="numberSigned"
+        android:inputType="textShortMessage"
         app:layout_constraintStart_toEndOf="@+id/txtEventDateLabelRE"
-        app:layout_constraintTop_toBottomOf="@+id/rdbServiceType2" />
-
-    <Button
-        android:id="@+id/btnServiceRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="@android:color/holo_red_light"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:foregroundTint="@android:color/holo_red_light"
-        android:text="@string/bnSaveService"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEventDescriptionRE" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEventShopNameRE" />
 
     <TextView
         android:id="@+id/txtEventDateLabelRE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="32dp"
         android:text="Date:"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintHorizontal_bias="0.128"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEventTypeLabelRE" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEventShopNameLabel" />
 
     <EditText
         android:id="@+id/txtEventLocationRE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/txtEventLocationLabelRE"
@@ -109,10 +94,10 @@
         android:id="@+id/txtEventDescriptionRE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textLongMessage|textPersonName"
         app:layout_constraintStart_toEndOf="@+id/txtEventDescriptionLabelRE"
         app:layout_constraintTop_toBottomOf="@+id/txtEventLocationRE" />
 
@@ -120,11 +105,11 @@
         android:id="@+id/txtEventDescriptionLabelRE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:text="Description:"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.147"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEventLocationLabelRE" />
 
@@ -132,8 +117,8 @@
         android:id="@+id/txtEventTimeRE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="81dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/exTime"
         android:inputType="textPersonName"
@@ -144,11 +129,11 @@
         android:id="@+id/txtEventLocationLabelRE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:text="Address: "
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintHorizontal_bias="0.139"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEventTimeLabelRE" />
 
@@ -156,20 +141,35 @@
         android:id="@+id/txtEventTimeLabelRE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:text="Time:"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEventDateLabelRE" />
+
+    <Button
+        android:id="@+id/btnServiceRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@android:color/holo_red_light"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:foregroundTint="@android:color/holo_red_light"
+        android:text="@string/bnSaveService"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEventDescriptionRE" />
 
     <RadioGroup
         android:id="@+id/rdbServiceType1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="167dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEventNameRE">
@@ -193,7 +193,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="167dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rdbServiceType1">
@@ -211,5 +211,26 @@
             android:layout_height="wrap_content"
             android:text="@string/exTypeEducational" />
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtEventShopNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="80dp"
+        android:text="Shop Name:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEventTypeLabelRE" />
+
+    <EditText
+        android:id="@+id/txtEventShopNameRE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/txtEventShopNameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/rdbServiceType2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -45,6 +45,7 @@
     <string name="organizationPhone">604-681-8480</string>
     <string name="btnDonation">Donation</string>
     <string name="btnVolunteer">Volunteer</string>
+    <string name="btnBringList">Bring the List</string>
 
     <string name="freeServiceTitle">Free Service List</string>
     <string name="btnRegisterService">Register Service</string>

@@ -11,7 +11,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -60,14 +59,14 @@ public class DonationListsActivity extends AppCompatActivity implements Organiza
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_donation_service_lists);
+        setContentView(R.layout.activity_donation_lists);
 
-        txtOrganizationTitle = findViewById(R.id.txtTitleFreeService);
-        recyclerView = findViewById(R.id.freeServiceRecyclerView);
-        btnBringData = findViewById(R.id.btnRegisterService);
+        txtOrganizationTitle = findViewById(R.id.txtTitleOZList);
+        recyclerView = findViewById(R.id.OZRecyclerView);
+        btnBringData = findViewById(R.id.btnOZBringList);
 
-        txtOrganizationTitle.setText("Organization List");
-        btnBringData.setText("Bring the List");
+//        txtOrganizationTitle.setText("Organization List");
+//        btnBringData.setText("Bring the List");
 
         //initialize the DB
         dao = new OrganizationDAO();

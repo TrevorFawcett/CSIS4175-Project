@@ -1,12 +1,22 @@
 package com.example.choose2help4175;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,9 +28,13 @@ public class FreeServiceListsActivity extends AppCompatActivity implements FreeS
 
     RecyclerView recyclerView;
     TextView txtFreeServiceTitle;
+    Button btnFSBringList;
     Button btnRegisterService;
     FreeServiceAdapter adapter;
     FreeServiceDAO dao;
+    String fsName;
+    int fsImg;
+    String fsDate;
 
     ArrayList<FreeService> fsList = new ArrayList<>();
     ArrayList<FreeService> fsAllList = new ArrayList<>();
@@ -37,23 +51,132 @@ public class FreeServiceListsActivity extends AppCompatActivity implements FreeS
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_donation_service_lists);
+        setContentView(R.layout.activity_freeservice_lists);
 
-//        recyclerView = findViewById(R.id.freeServiceRecyclerView);
-//        txtFreeServiceTitle = findViewById(R.id.txtTitleFreeService);
-//        btnRegisterService = findViewById(R.id.btnRegisterService);
+        recyclerView = findViewById(R.id.freeServiceRecyclerView);
+        txtFreeServiceTitle = findViewById(R.id.txtTitleFreeService);
+        btnFSBringList = findViewById(R.id.btnFSBringList);
+        btnRegisterService = findViewById(R.id.btnRegisterService);
+
+        dao = new FreeServiceDAO();
+
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(manager);
+
+        adapter = new FreeServiceAdapter(this, fsList);
+        adapter.setListener(this);
+        recyclerView.setAdapter(adapter);
+
+        btnRegisterService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FreeServiceListsActivity.this, RegisterFreeServiceActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnFSBringList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                removeExistingData();
+                createFreeService();
+
+                loadData();
+            }
+        });
+
+    }
+
+    private void removeExistingData(){
+        dao.remove().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Log.d(TAG, "Success Remove FreeService Table");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.e(TAG, "Failed to remove FreeService");
+            }
+        });
+    }
+
+    private void createFreeService(){
+
+        for(int i = 0; i < FSNames.size(); i++){
+            FreeService freeService = new FreeService(FScodes.get(i), FSNames.get(i), FSImageTypes.get(i), FSAddress.get(i), FSLocation.get(i), FSDate.get(i), FSTime.get(i), FSDescription.get(i));
+
+            dao.createFreeService(freeService).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void unused) {
+                    Log.d(TAG, "Success add FreeService");
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.e(TAG, "Failed to create FreeService");
+                }
+            });
+        }
+
+        if(getIntent().getExtras() != null){
+
+            fsName = getIntent().getExtras().getString("FSName");
+            fsImg = getIntent().getExtras().getInt("FSTYPEIMAGE");
+            fsDate = getIntent().getExtras().getString("FSDATE");
+
+            FreeService eventfs = new FreeService(fsImg, fsName, fsDate);
+            dao.createFreeService(eventfs).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void unused) {
+                    Log.d(TAG, "Success add FreeService Register");
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.e(TAG, "Failed to Register FreeService");
+                }
+            });
+        }
+    }
+
+    private void loadData(){
+
+        dao.get().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+//                fsList.clear();
+
+                for(DataSnapshot data : snapshot.getChildren()){
+
+                    FreeService freeService = data.getValue(FreeService.class);
+                    fsAllList.add(freeService);
+
+                    FreeService fsImgNameDate = new FreeService(freeService.getImgFServiceType(), freeService.getfServiceName(), freeService.getfServiceDate());
+
+                    fsList.add(fsImgNameDate);
+                }
+
+//                if(getIntent().getExtras() != null){
 //
-//        dao = new FreeServiceDAO();
+//                    fsName = getIntent().getExtras().getString("FSName");
+//                    fsImg = getIntent().getExtras().getInt("FSTYPEIMAGE");
+//                    fsDate = getIntent().getExtras().getString("FSDATE");
 //
-//        LinearLayoutManager manager = new LinearLayoutManager(this);
-//        recyclerView.setLayoutManager(manager);
-//
-//        adapter = new FreeServiceAdapter(this, fsList);
-//        adapter.setListener(this);
-//        recyclerView.setAdapter(adapter);
+//                    FreeService eventfs = new FreeService(fsImg, fsName, fsDate);
+//                    fsList.add(eventfs);
+//                }
+                adapter.notifyDataSetChanged();
+            }
 
-
-
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e(TAG, "Failed to load FreeService List");
+            }
+        });
     }
 
     @Override
