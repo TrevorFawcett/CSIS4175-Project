@@ -1,4 +1,4 @@
-package com.example.choose2help4175;
+package com.example.choose2help4175.model;
 
 public class FreeService {
 

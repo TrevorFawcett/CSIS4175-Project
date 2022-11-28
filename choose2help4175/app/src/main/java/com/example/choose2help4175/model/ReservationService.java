@@ -1,4 +1,4 @@
-package com.example.choose2help4175;
+package com.example.choose2help4175.model;
 
 import java.util.Date;
 

@@ -1,5 +1,6 @@
-package com.example.choose2help4175;
+package com.example.choose2help4175.DAO;
 
+import com.example.choose2help4175.model.Organization;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

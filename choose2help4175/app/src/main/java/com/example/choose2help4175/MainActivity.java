@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_home:
                 // Need to change this to another activity.
                 // I can't redirect to map because the app crashes.
-                Intent switchToMapIntent = new Intent(this, MainActivity.class);
+                Intent switchToMapIntent = new Intent(this, CharityMap.class);
                 startActivity(switchToMapIntent);
 
                 break;

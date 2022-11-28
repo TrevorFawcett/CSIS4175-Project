@@ -37,10 +37,8 @@
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_blank.xml" value="0.25416666666666665" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_charity_map.xml" value="0.25416666666666665" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_donation_details.xml" value="0.4" />
-        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_donation_lists.xml" value="0.2" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_donation_service_lists.xml" value="0.25416666666666665" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_free_service_reservation.xml" value="0.25416666666666665" />
-        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_freeservice_lists.xml" value="0.36666666666666664" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_history.xml" value="0.25416666666666665" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
@@ -48,15 +46,16 @@
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_register_free_service_2.xml" value="0.36666666666666664" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_signup.xml" value="0.25416666666666665" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/fragment_free_service.xml" value="0.264" />
-        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/recyclerview_freeservice_item.xml" value="0.1" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/recyclerview_freeservice_item.xml" value="0.16018518518518518" />
         <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_blank.xml" value="0.2942708333333333" />
         <entry key="app/src/main/res/layout/activity_charity_map.xml" value="0.1398148148148148" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.22447916666666667" />
-        <entry key="app/src/main/res/layout/activity_donation_details.xml" value="0.26974358974358975" />
+        <entry key="app/src/main/res/layout/activity_donation_details.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_donation_lists.xml" value="0.23489583333333333" />
         <entry key="app/src/main/res/layout/activity_donation_service_lists.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_drawer_base.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_drawer_base.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_free_service_reservation.xml" value="0.1398148148148148" />
         <entry key="app/src/main/res/layout/activity_history.xml" value="0.2942708333333333" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2942708333333333" />
@@ -72,13 +71,15 @@
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25833333333333336" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.25833333333333336" />
         <entry key="app/src/main/res/layout/layout_history_element.xml" value="0.2942708333333333" />
-        <entry key="app/src/main/res/layout/main_drawer_header.xml" value="0.2234375" />
+        <entry key="app/src/main/res/layout/layout_review.xml" value="0.27589743589743587" />
+        <entry key="app/src/main/res/layout/main_drawer_header.xml" value="0.375" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.25833333333333336" />
         <entry key="app/src/main/res/layout/recyclerview_donation_item.xml" value="0.1398148148148148" />
         <entry key="app/src/main/res/layout/recyclerview_freeservice_item.xml" value="0.26974358974358975" />
         <entry key="app/src/main/res/menu/activity_main2_drawer.xml" value="0.2942708333333333" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.225" />
         <entry key="app/src/main/res/menu/main.xml" value="0.18055555555555555" />
+        <entry key="app/src/main/res/menu/main_activity2.xml" value="0.225" />
         <entry key="app/src/main/res/menu/main_drawer_menu.xml" value="0.18055555555555555" />
       </map>
     </option>
