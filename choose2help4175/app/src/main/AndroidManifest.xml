@@ -40,8 +40,8 @@
             android:exported="false" />
         <activity
             android:name=".DashboardActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Choose2help4175.NoActionBar" />
+            android:exported="true"/>
+
         <activity
             android:name=".FreeServiceReservationActivity"
             android:exported="false">
@@ -93,9 +93,9 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            />
+            </intent-filter>/>
         </activity>
+
         <activity
             android:name=".SignupActivity"
             android:exported="false" />

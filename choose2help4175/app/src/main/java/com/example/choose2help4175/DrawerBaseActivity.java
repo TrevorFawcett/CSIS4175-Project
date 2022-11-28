@@ -16,6 +16,8 @@ import com.google.android.material.navigation.NavigationView;
 public class DrawerBaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
+
+
     DrawerLayout drawerLayout;
 
     @Override

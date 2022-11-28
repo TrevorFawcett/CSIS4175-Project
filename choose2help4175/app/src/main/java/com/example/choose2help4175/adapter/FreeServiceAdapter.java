@@ -1,4 +1,4 @@
-package com.example.choose2help4175;
+package com.example.choose2help4175.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.choose2help4175.R;
+import com.example.choose2help4175.model.FreeService;
 
 import java.util.ArrayList;
 

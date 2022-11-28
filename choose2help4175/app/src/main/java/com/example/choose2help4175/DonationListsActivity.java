@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.choose2help4175.DAO.OrganizationDAO;
+import com.example.choose2help4175.adapter.OrganizationAdapter;
+import com.example.choose2help4175.model.Organization;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
