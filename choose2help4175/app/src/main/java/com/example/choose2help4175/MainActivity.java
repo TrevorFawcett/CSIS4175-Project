@@ -1,14 +1,19 @@
 package com.example.choose2help4175;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -43,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_donations, R.id.nav_offerservice, R.id.nav_donationhistory)
+                R.id.nav_home, R.id.nav_donations, R.id.nav_offerservice, R.id.nav_donationhistory, R.id.nav_userdata)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -81,6 +86,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent switchToHistoryIntent = new Intent(this, HistoryActivity.class);
                 startActivity(switchToHistoryIntent);
                 break;
+            case R.id.nav_userdata:
+
+                Intent switchToSettings = new Intent(this, UserDisplayActivity.class);
+                startActivity(switchToSettings);
+                break;
         }
 
         return true;
@@ -99,4 +109,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
+
+
+
+
+
 }
+
