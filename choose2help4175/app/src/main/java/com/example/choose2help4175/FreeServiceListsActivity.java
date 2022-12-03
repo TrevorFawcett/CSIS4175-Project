@@ -147,6 +147,7 @@ public class FreeServiceListsActivity extends AppCompatActivity implements FreeS
 
     private void loadData(){
 
+
         dao.get().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_userdata:
 
-                Intent switchToSettings = new Intent(this, UserDisplayActivity.class);
+                Intent switchToSettings = new Intent(this, UserFormActivity.class);
                 startActivity(switchToSettings);
                 break;
         }
