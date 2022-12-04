@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -35,21 +36,18 @@ public class FreeServiceListsActivity extends AppCompatActivity implements FreeS
     Button btnRegisterService;
     FreeServiceAdapter adapter;
     FreeServiceDAO dao;
-    String fsName;
-    int fsImg;
-    String fsDate;
+    String fsNameR;
+    int fsImgR;
+    String fsDateR;
+    String fsShopNameR;
+    String fsTimeR;
+    String fsAddressR;
+    String fsDescriptionR;
+    boolean bringData = false;
 
     ArrayList<FreeService> fsList = new ArrayList<>();
     ArrayList<FreeService> fsAllList = new ArrayList<>();
 
-    List<String> FScodes = new ArrayList<>(Arrays.asList("fs01", "fs02"));
-    List<String> FSNames = new ArrayList<>(Arrays.asList("Free Coffee", "Haircuts for Dignity"));
-    List<Integer> FSImageTypes = new ArrayList<>(Arrays.asList(R.drawable.food, R.drawable.amenities, R.drawable.cultural, R.drawable.educational));
-    List<String> FSAddress = new ArrayList<>(Arrays.asList("59 Powell St, Vancouver, BC V6A 1E9", "North Vancouver"));
-    List<String> FSLocation = new ArrayList<>(Arrays.asList("The Dugout", "Hair Shop"));
-    List<String> FSDate = new ArrayList<>(Arrays.asList("2022-10-10", "2022-12-25"));
-    List<String> FSTime = new ArrayList<>(Arrays.asList("2 PM", "10 am"));
-    List<String> FSDescription = new ArrayList<>(Arrays.asList("Delicious coffee makes for a beautiful day.", "Start your day with a great haircut."));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +58,11 @@ public class FreeServiceListsActivity extends AppCompatActivity implements FreeS
         txtFreeServiceTitle = findViewById(R.id.txtTitleFreeService);
         btnFSBringList = findViewById(R.id.btnFSBringList);
         btnRegisterService = findViewById(R.id.btnRegisterService);
+
+        if(bringData == false){
+            btnFSBringList.setText("Bring the List");
+            bringData = true;
+        }
 
         dao = new FreeServiceDAO();
 
@@ -82,67 +85,12 @@ public class FreeServiceListsActivity extends AppCompatActivity implements FreeS
             @Override
             public void onClick(View view) {
 
-
-                removeExistingData();
-                createFreeService();
-
                 loadData();
+                btnFSBringList.setText("Reload the list");
+                bringData = false;
             }
         });
 
-    }
-
-    private void removeExistingData(){
-        dao.remove().addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void unused) {
-                Log.d(TAG, "Success Remove FreeService Table");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.e(TAG, "Failed to remove FreeService");
-            }
-        });
-    }
-
-    private void createFreeService(){
-
-        for(int i = 0; i < FSNames.size(); i++){
-            FreeService freeService = new FreeService(FScodes.get(i), FSNames.get(i), FSImageTypes.get(i), FSAddress.get(i), FSLocation.get(i), FSDate.get(i), FSTime.get(i), FSDescription.get(i));
-
-            dao.createFreeService(freeService).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void unused) {
-                    Log.d(TAG, "Success add FreeService");
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.e(TAG, "Failed to create FreeService");
-                }
-            });
-        }
-
-        if(getIntent().getExtras() != null){
-
-            fsName = getIntent().getExtras().getString("FSName");
-            fsImg = getIntent().getExtras().getInt("FSTYPEIMAGE");
-            fsDate = getIntent().getExtras().getString("FSDATE");
-
-            FreeService eventfs = new FreeService(fsImg, fsName, fsDate);
-            dao.createFreeService(eventfs).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void unused) {
-                    Log.d(TAG, "Success add FreeService Register");
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.e(TAG, "Failed to Register FreeService");
-                }
-            });
-        }
     }
 
     private void loadData(){
@@ -151,7 +99,7 @@ public class FreeServiceListsActivity extends AppCompatActivity implements FreeS
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-//                fsList.clear();
+                fsList.clear();
 
                 for(DataSnapshot data : snapshot.getChildren()){
 
@@ -163,15 +111,6 @@ public class FreeServiceListsActivity extends AppCompatActivity implements FreeS
                     fsList.add(fsImgNameDate);
                 }
 
-//                if(getIntent().getExtras() != null){
-//
-//                    fsName = getIntent().getExtras().getString("FSName");
-//                    fsImg = getIntent().getExtras().getInt("FSTYPEIMAGE");
-//                    fsDate = getIntent().getExtras().getString("FSDATE");
-//
-//                    FreeService eventfs = new FreeService(fsImg, fsName, fsDate);
-//                    fsList.add(eventfs);
-//                }
                 adapter.notifyDataSetChanged();
             }
 
@@ -184,6 +123,34 @@ public class FreeServiceListsActivity extends AppCompatActivity implements FreeS
 
     @Override
     public void onListItemClick(int position) {
+
+        FreeService freeService = fsAllList.get(position);
+
+//        String fsId = freeService.getfServiceId();
+//        String fsName = freeService.getfServiceName();
+        int imgFsType = freeService.getImgFServiceType();
+        String fsAddress = freeService.getfServiceAddress();
+        String fsLocation = freeService.getfServiceLocation();
+        String fsDate = freeService.getfServiceDate();
+        String fsTime = freeService.getfServiceTime();
+        String fsDescription = freeService.getfServiceDescription();
+
+        SharedPreferences sharedPreferences = getSharedPreferences("FreeServiceContents",MODE_PRIVATE);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+//        edit.putString("FSID", fsId);
+//        edit.putString("FSNAME", fsName);
+        edit.putInt("FSIMGTYPE", imgFsType);
+        edit.putString("FSADDRESS", fsAddress);
+        edit.putString("FSLOCATION", fsLocation);
+        edit.putString("FSDATE", fsDate);
+        edit.putString("FSTIME", fsTime);
+        edit.putString("FSDESCRIPTION", fsDescription);
+
+        edit.commit();
+
+        Intent intent = new Intent(this, FreeServiceReservationActivity.class);
+
+        startActivity(intent);
 
     }
 }

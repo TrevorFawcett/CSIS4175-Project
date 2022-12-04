@@ -41,12 +41,12 @@ public class RegisterFreeServiceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_free_service_2);
+        setContentView(R.layout.activity_register_free_service);
 
         SName = findViewById(R.id.txtEventNameRE);
         SShopName = findViewById(R.id.txtEventShopNameRE);
         SDate = findViewById(R.id.txtEventDateRE);
-        STime = findViewById(R.id.txtEventNameRE);
+        STime = findViewById(R.id.txtEventTimeRE);
         SAddress = findViewById(R.id.txtEventLocationRE);
         SDescription = findViewById(R.id.txtEventDescriptionRE);
 
@@ -93,35 +93,13 @@ public class RegisterFreeServiceActivity extends AppCompatActivity {
             }
         });
 
-//        this.fServiceName = fServiceName;
-//        this.imgFServiceType = imgFServiceType;
-//        this.fServiceAddress = fServiceAddress;
-//        this.fServiceLocation = fServiceLocation;
-//        this.fServiceDate = fServiceDate;
-//        this.fServiceTime = fServiceTime;
-//        this.fServiceDescription = fServiceDescription;
         btnRESave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-//                createFreeService();
-
-                String fsName = SName.getText().toString();
-                String fsShopName = SShopName.getText().toString();
-                String fsDate = SDate.getText().toString();
-                String fsTime = STime.getText().toString();
-                String fsAddress = SAddress.getText().toString();
-                String fsDescription = SDescription.getText().toString();
+                createFreeService();
 
                 Intent intent = new Intent(RegisterFreeServiceActivity.this, FreeServiceListsActivity.class);
-
-                intent.putExtra("FSName", fsName);
-                intent.putExtra("FSTYPEIMAGE", fsImg);
-                intent.putExtra("FSSHOPNAME", fsShopName);
-                intent.putExtra("FSDATE", fsDate);
-                intent.putExtra("FSTIME", fsTime);
-                intent.putExtra("FSADDRESS", fsAddress);
-                intent.putExtra("FSDESCRIPTION", fsDescription);
 
                 startActivity(intent);
             }
@@ -137,7 +115,7 @@ public class RegisterFreeServiceActivity extends AppCompatActivity {
             String fsAddress = SAddress.getText().toString();
             String fsDescription = SDescription.getText().toString();
 
-            FreeService freeService = new FreeService(fsName, fsImg, fsAddress, fsShopName, fsDate, fsTime, fsDescription);
+            FreeService freeService = new FreeService(fsName, fsImg, fsShopName, fsDate, fsTime, fsAddress, fsDescription);
 
             dao.createFreeService(freeService).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
