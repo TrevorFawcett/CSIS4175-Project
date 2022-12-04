@@ -1,9 +1,21 @@
 package com.example.choose2help4175;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
 
+import com.example.choose2help4175.databinding.ActivityBaseBinding;
+import com.example.choose2help4175.ui.navigation.BaseActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -11,11 +23,13 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.choose2help4175.databinding.ActivityCharityMapBinding;
+import com.google.android.material.navigation.NavigationView;
 
 public class CharityMap extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private ActivityCharityMapBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +37,7 @@ public class CharityMap extends FragmentActivity implements OnMapReadyCallback {
 
         binding = ActivityCharityMapBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        //View rootView = getLayoutInflater().inflate(R.layout.activity_charity_map, BaseActivityInner.bindintframeLayout);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -48,4 +63,6 @@ public class CharityMap extends FragmentActivity implements OnMapReadyCallback {
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
+
+
 }

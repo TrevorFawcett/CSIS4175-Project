@@ -14,7 +14,10 @@ import android.widget.TextView;
 
 import com.example.choose2help4175.DAO.OrganizationDAO;
 import com.example.choose2help4175.adapter.OrganizationAdapter;
+import com.example.choose2help4175.databinding.ActivityDashboardBinding;
+import com.example.choose2help4175.databinding.ActivityDonationListsBinding;
 import com.example.choose2help4175.model.Organization;
+import com.example.choose2help4175.ui.navigation.BaseActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -25,9 +28,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class DonationListsActivity extends AppCompatActivity implements OrganizationAdapter.ListItemListener{
+public class DonationListsActivity extends BaseActivity implements OrganizationAdapter.ListItemListener{
 
     private static final String TAG = DonationListsActivity.class.getSimpleName();
+    ActivityDonationListsBinding activityDonationListsBinding;
 
     RecyclerView recyclerView;
     TextView txtOrganizationTitle;
@@ -62,11 +66,16 @@ public class DonationListsActivity extends AppCompatActivity implements Organiza
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_donation_lists);
+        //setContentView(R.layout.activity_donation_lists);
+        activityDonationListsBinding = ActivityDonationListsBinding.inflate(getLayoutInflater());
+        View rootView = getLayoutInflater().inflate(R.layout.activity_donation_lists, frameLayout);
 
-        txtOrganizationTitle = findViewById(R.id.txtTitleOZList);
-        recyclerView = findViewById(R.id.OZRecyclerView);
-        btnBringData = findViewById(R.id.btnOZBringList);
+//        txtOrganizationTitle = findViewById(R.id.txtTitleOZList);
+//        recyclerView = findViewById(R.id.OZRecyclerView);
+//        btnBringData = findViewById(R.id.btnOZBringList);
+        txtOrganizationTitle = activityDonationListsBinding.txtTitleOZList;
+        recyclerView = activityDonationListsBinding.OZRecyclerView;
+        btnBringData = activityDonationListsBinding.btnOZBringList;
 
 //        txtOrganizationTitle.setText("Organization List");
 //        btnBringData.setText("Bring the List");

@@ -1,6 +1,7 @@
 package com.example.choose2help4175.DAO;
 
-import com.example.choose2help4175.model.FreeService;
+
+import com.example.choose2help4175.model.Review;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -12,11 +13,11 @@ public class ReviewDAO {
     public ReviewDAO(){
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-        dbReference = db.getReference(FreeService.class.getSimpleName());
+        dbReference = db.getReference(Review.class.getSimpleName());
     }
 
-    public Task<Void> createReviewService(FreeService freeService){
-        return dbReference.push().setValue(freeService);
+    public Task<Void> createReview(Review review){
+        return dbReference.push().setValue(review);
     }
 
     public Query get(){

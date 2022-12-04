@@ -13,11 +13,15 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.choose2help4175.DAO.FreeServiceDAO;
+import com.example.choose2help4175.databinding.ActivityRegisterFreeServiceBinding;
 import com.example.choose2help4175.model.FreeService;
+import com.example.choose2help4175.ui.navigation.BaseActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-public class RegisterFreeServiceActivity extends AppCompatActivity {
+public class RegisterFreeServiceActivity extends BaseActivity {
+
+    ActivityRegisterFreeServiceBinding activityRegisterFreeServiceBinding;
 
     private static final String TAG = RegisterFreeServiceActivity.class.getSimpleName();
     FreeServiceDAO dao;
@@ -41,23 +45,44 @@ public class RegisterFreeServiceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_free_service_2);
+        //setContentView(R.layout.activity_register_free_service_2);
 
-        SName = findViewById(R.id.txtEventNameRE);
-        SShopName = findViewById(R.id.txtEventShopNameRE);
-        SDate = findViewById(R.id.txtEventDateRE);
-        STime = findViewById(R.id.txtEventNameRE);
-        SAddress = findViewById(R.id.txtEventLocationRE);
-        SDescription = findViewById(R.id.txtEventDescriptionRE);
+        activityRegisterFreeServiceBinding = ActivityRegisterFreeServiceBinding.inflate(getLayoutInflater());
+        View rootView = getLayoutInflater().inflate(R.layout.activity_register_free_service_2, frameLayout);
 
-        radioGroup1 = findViewById(R.id.rdbServiceType1);
-        radioGroup2 = findViewById(R.id.rdbServiceType2);
-        rdbSTypeFood = findViewById(R.id.rdbSTypeFood);
-        rdbSTypeAmenities = findViewById(R.id.rdbTypeAmenities);
-        rdbSTypeCultural = findViewById(R.id.rdbSTypeCultural);
-        rdbSTypeEducational = findViewById(R.id.rdbSTypeEducational);
+//        SName = findViewById(R.id.txtEventNameRE);
+//        SShopName = findViewById(R.id.txtEventShopNameRE);
+//        SDate = findViewById(R.id.txtEventDateRE);
+//        STime = findViewById(R.id.txtEventNameRE);
+//        SAddress = findViewById(R.id.txtEventLocationRE);
+//        SDescription = findViewById(R.id.txtEventDescriptionRE);
+//
+//        radioGroup1 = findViewById(R.id.rdbServiceType1);
+//        radioGroup2 = findViewById(R.id.rdbServiceType2);
+//        rdbSTypeFood = findViewById(R.id.rdbSTypeFood);
+//        rdbSTypeAmenities = findViewById(R.id.rdbTypeAmenities);
+//        rdbSTypeCultural = findViewById(R.id.rdbSTypeCultural);
+//       rdbSTypeEducational = findViewById(R.id.rdbSTypeEducational);
+//
+//        btnRESave = findViewById(R.id.btnServiceRegister);
 
-        btnRESave = findViewById(R.id.btnServiceRegister);
+//        SName = activityRegisterFreeServiceBinding.txtEventNameRE;
+//        SShopName = activityRegisterFreeServiceBinding.txtEventShopNameRE;
+//        SDate = activityRegisterFreeServiceBinding.txtEventDateRE;
+//        STime = activityRegisterFreeServiceBinding.txtEventNameRE;
+//        SAddress = activityRegisterFreeServiceBinding.txtEventLocationRE;
+//        SDescription = activityRegisterFreeServiceBinding.txtEventDescriptionRE;
+//
+//        radioGroup1 = activityRegisterFreeServiceBinding.rdbServiceType1;
+//        radioGroup2 = activityRegisterFreeServiceBinding.rdbServiceType2;
+//        rdbSTypeFood = activityRegisterFreeServiceBinding.rdbSTypeFood;
+//        rdbSTypeAmenities = activityRegisterFreeServiceBinding.rdbTypeAmenities;
+//        rdbSTypeCultural = activityRegisterFreeServiceBinding.rdbSTypeCultural;
+//        rdbSTypeEducational = activityRegisterFreeServiceBinding.rdbSTypeEducational;
+
+        btnRESave = activityRegisterFreeServiceBinding.btnServiceRegister;
+
+
         dao = new FreeServiceDAO();
 
         radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

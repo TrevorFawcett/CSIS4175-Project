@@ -11,10 +11,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.choose2help4175.DAO.FreeServiceDAO;
 import com.example.choose2help4175.adapter.FreeServiceAdapter;
+import com.example.choose2help4175.databinding.ActivityFreeserviceListsBinding;
 import com.example.choose2help4175.model.FreeService;
+import com.example.choose2help4175.ui.navigation.BaseActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -25,9 +28,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class FreeServiceListsActivity extends AppCompatActivity implements FreeServiceAdapter.ListItemListener {
+public class FreeServiceListsActivity extends BaseActivity implements FreeServiceAdapter.ListItemListener {
 
     private static final String TAG = FreeServiceListsActivity.class.getSimpleName();
+    ActivityFreeserviceListsBinding activityFreeserviceListsBinding;
 
     RecyclerView recyclerView;
     TextView txtFreeServiceTitle;
@@ -54,12 +58,19 @@ public class FreeServiceListsActivity extends AppCompatActivity implements FreeS
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_freeservice_lists);
+        //setContentView(R.layout.activity_freeservice_lists);
+        activityFreeserviceListsBinding = ActivityFreeserviceListsBinding.inflate(getLayoutInflater());
+        View rootView = getLayoutInflater().inflate(R.layout.activity_freeservice_lists, frameLayout);
 
-        recyclerView = findViewById(R.id.freeServiceRecyclerView);
-        txtFreeServiceTitle = findViewById(R.id.txtTitleFreeService);
-        btnFSBringList = findViewById(R.id.btnFSBringList);
-        btnRegisterService = findViewById(R.id.btnRegisterService);
+//        recyclerView = findViewById(R.id.freeServiceRecyclerView);
+//        txtFreeServiceTitle = findViewById(R.id.txtTitleFreeService);
+//        btnFSBringList = findViewById(R.id.btnFSBringList);
+//        btnRegisterService = findViewById(R.id.btnRegisterService);
+
+        recyclerView = activityFreeserviceListsBinding.freeServiceRecyclerView;
+        txtFreeServiceTitle = activityFreeserviceListsBinding.txtTitleFreeService;
+        btnFSBringList = activityFreeserviceListsBinding.btnFSBringList;
+        btnRegisterService = activityFreeserviceListsBinding.btnRegisterService;
 
         dao = new FreeServiceDAO();
 
@@ -81,8 +92,7 @@ public class FreeServiceListsActivity extends AppCompatActivity implements FreeS
         btnFSBringList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
+                Toast.makeText(FreeServiceListsActivity.this, "Clicking bring list" , Toast.LENGTH_SHORT).show();
                 removeExistingData();
                 createFreeService();
 
