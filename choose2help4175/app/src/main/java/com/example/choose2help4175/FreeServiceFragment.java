@@ -1,5 +1,6 @@
 package com.example.choose2help4175;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +29,10 @@ public class FreeServiceFragment extends Fragment {
 
     public FreeServiceFragment() {
         // Required empty public constructor
+    }
+
+    public static FreeServiceFragment newInstance(){
+        return new FreeServiceFragment();
     }
 
     /**
@@ -59,6 +66,33 @@ public class FreeServiceFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_free_service, container, false);
+        View rootView =  inflater.inflate(R.layout.fragment_free_service, container, false);
+
+        ImageView imageView = rootView.findViewById(R.id.imgFreeServiceFrg);
+        TextView txtFsLocation = rootView.findViewById(R.id.txtFreeServiceLocationFrag);
+        TextView txtFsAddress = rootView.findViewById(R.id.txtFreeServiceAddressFrg);
+        TextView txtFsDate = rootView.findViewById(R.id.txtFreeServiceDateFrg);
+        TextView txtFsTime = rootView.findViewById(R.id.txtFreeServiceTimeFrg);
+        TextView txtFsDescription = rootView.findViewById(R.id.txtFreeServiceDescriptionFrg);
+
+        SharedPreferences sp = getActivity().getSharedPreferences("FreeServiceContents",0);
+
+//        String fsId = sp.getString("FSID", "");
+//        String fsName = sp.getString("FSNAME", "");
+        int imgFsType = sp.getInt("FSIMGTYPE", 0);
+        String fsAddress = sp.getString("FSADDRESS", "");
+        String fsLocation = sp.getString("FSLOCATION", "");
+        String fsDate = sp.getString("FSDATE", "");
+        String fsTime = sp.getString("FSTIME", "");
+        String fsDescription = sp.getString("FSDESCRIPTION", "");
+
+        imageView.setImageResource(imgFsType);
+        txtFsLocation.setText(fsLocation);
+        txtFsAddress.setText(fsAddress);
+        txtFsDate.setText(fsDate);
+        txtFsTime.setText(fsTime);
+        txtFsDescription.setText(fsDescription);
+
+        return rootView;
     }
 }

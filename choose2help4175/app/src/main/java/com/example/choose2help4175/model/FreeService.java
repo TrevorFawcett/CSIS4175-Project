@@ -31,7 +31,7 @@ public class FreeService {
         this.fServiceDate = fServiceDate;
     }
 
-    public FreeService(String fServiceName, int imgFServiceType, String fServiceAddress, String fServiceLocation, String fServiceDate, String fServiceTime, String fServiceDescription) {
+    public FreeService(String fServiceName, int imgFServiceType, String fServiceLocation, String fServiceDate, String fServiceTime, String fServiceAddress, String fServiceDescription) {
         this.fServiceName = fServiceName;
         this.imgFServiceType = imgFServiceType;
         this.fServiceAddress = fServiceAddress;

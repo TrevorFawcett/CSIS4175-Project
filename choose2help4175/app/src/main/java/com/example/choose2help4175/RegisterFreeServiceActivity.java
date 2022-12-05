@@ -44,29 +44,15 @@ public class RegisterFreeServiceActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_register_free_service_2);
 
+       // setContentView(R.layout.activity_register_free_service);
         activityRegisterFreeServiceBinding = ActivityRegisterFreeServiceBinding.inflate(getLayoutInflater());
         View rootView = getLayoutInflater().inflate(R.layout.activity_register_free_service, frameLayout);
-
-//        SName = findViewById(R.id.txtEventNameRE);
-//        SShopName = findViewById(R.id.txtEventShopNameRE);
-//        SDate = findViewById(R.id.txtEventDateRE);
-//        STime = findViewById(R.id.txtEventNameRE);
-//        SAddress = findViewById(R.id.txtEventLocationRE);
-//        SDescription = findViewById(R.id.txtEventDescriptionRE);
-//
-//        radioGroup1 = findViewById(R.id.rdbServiceType1);
-//        radioGroup2 = findViewById(R.id.rdbServiceType2);
-//        rdbSTypeFood = findViewById(R.id.rdbSTypeFood);
-//        rdbSTypeAmenities = findViewById(R.id.rdbTypeAmenities);
-//        rdbSTypeCultural = findViewById(R.id.rdbSTypeCultural);
-//       rdbSTypeEducational = findViewById(R.id.rdbSTypeEducational);
 
         SName = rootView.findViewById(R.id.txtEventNameRE);
         SShopName = rootView.findViewById(R.id.txtEventShopNameRE);
         SDate = rootView.findViewById(R.id.txtEventDateRE);
-        STime = rootView.findViewById(R.id.txtEventNameRE);
+        STime = rootView.findViewById(R.id.txtEventTimeRE);
         SAddress = rootView.findViewById(R.id.txtEventLocationRE);
         SDescription = rootView.findViewById(R.id.txtEventDescriptionRE);
 
@@ -78,7 +64,6 @@ public class RegisterFreeServiceActivity extends BaseActivity {
         rdbSTypeEducational = rootView.findViewById(R.id.rdbSTypeEducational);
 
         btnRESave = rootView.findViewById(R.id.btnServiceRegister);
-
         dao = new FreeServiceDAO();
 
         radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -114,35 +99,13 @@ public class RegisterFreeServiceActivity extends BaseActivity {
             }
         });
 
-//        this.fServiceName = fServiceName;
-//        this.imgFServiceType = imgFServiceType;
-//        this.fServiceAddress = fServiceAddress;
-//        this.fServiceLocation = fServiceLocation;
-//        this.fServiceDate = fServiceDate;
-//        this.fServiceTime = fServiceTime;
-//        this.fServiceDescription = fServiceDescription;
         btnRESave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-//                createFreeService();
-
-                String fsName = SName.getText().toString();
-                String fsShopName = SShopName.getText().toString();
-                String fsDate = SDate.getText().toString();
-                String fsTime = STime.getText().toString();
-                String fsAddress = SAddress.getText().toString();
-                String fsDescription = SDescription.getText().toString();
+                createFreeService();
 
                 Intent intent = new Intent(RegisterFreeServiceActivity.this, FreeServiceListsActivity.class);
-
-                intent.putExtra("FSName", fsName);
-                intent.putExtra("FSTYPEIMAGE", fsImg);
-                intent.putExtra("FSSHOPNAME", fsShopName);
-                intent.putExtra("FSDATE", fsDate);
-                intent.putExtra("FSTIME", fsTime);
-                intent.putExtra("FSADDRESS", fsAddress);
-                intent.putExtra("FSDESCRIPTION", fsDescription);
 
                 startActivity(intent);
             }
@@ -158,7 +121,7 @@ public class RegisterFreeServiceActivity extends BaseActivity {
             String fsAddress = SAddress.getText().toString();
             String fsDescription = SDescription.getText().toString();
 
-            FreeService freeService = new FreeService(fsName, fsImg, fsAddress, fsShopName, fsDate, fsTime, fsDescription);
+            FreeService freeService = new FreeService(fsName, fsImg, fsShopName, fsDate, fsTime, fsAddress, fsDescription);
 
             dao.createFreeService(freeService).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
