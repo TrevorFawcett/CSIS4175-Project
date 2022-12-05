@@ -71,15 +71,16 @@ public class DonationDetailsActivity extends BaseActivity {
 //        btnDonation = findViewById(R.id.btnDonationOZ);
 //        btnVolunteer = findViewById(R.id.btnVolunteerOZ);
 
-        imgOz = activityDonationDetailsBinding.imgOZ;
-        txtOzTitle = activityDonationDetailsBinding.txtTitleOZ;
-        txtOzDescription = activityDonationDetailsBinding.txtDescriptionOZ;
-        txtOzAddress = activityDonationDetailsBinding.txtAddressOZ;
-        txtOzEmail = activityDonationDetailsBinding.txtEmailOZ;
-        txtOzPhoneNumber = activityDonationDetailsBinding.txtPhoneOZ;
-        btnDonation = activityDonationDetailsBinding.btnDonationOZ;
-        btnVolunteer = activityDonationDetailsBinding.btnVolunteerOZ;
-        recyclerViewReviews = activityDonationDetailsBinding.recyclerViewReviews;
+        imgOz = rootView.findViewById(R.id.imgOZ);
+        txtOzTitle = rootView.findViewById(R.id.txtTitleOZ);
+        txtOzDescription = rootView.findViewById(R.id.txtDescriptionOZ);
+        txtOzAddress = rootView.findViewById(R.id.txtAddressOZ);
+        txtOzEmail = rootView.findViewById(R.id.txtEmailOZ);
+        txtOzPhoneNumber = rootView.findViewById(R.id.txtPhoneOZ);
+        btnDonation = rootView.findViewById(R.id.btnDonationOZ);
+        btnVolunteer = rootView.findViewById(R.id.btnVolunteerOZ);
+
+        recyclerViewReviews = rootView.findViewById(R.id.recyclerViewReviews);
 
         String ozTitle = getIntent().getExtras().getString("OZTITLE");
         String ozDescription = getIntent().getExtras().getString("OZDESCRIPTON");

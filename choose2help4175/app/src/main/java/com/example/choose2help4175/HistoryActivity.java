@@ -49,18 +49,21 @@ public class HistoryActivity extends BaseActivity {
         View rootView = getLayoutInflater().inflate(R.layout.activity_history, frameLayout);
         //setContentView(R.layout.activity_history);
 
-        recyclerView = activityHistoryBinding.recyclerViewHistory;
+        recyclerView = rootView.findViewById(R.id.recyclerViewHistory);
         dao = new HistoryDAO();
+
+
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
 
         adapter = new HistoryAdapter(this, userActionList);
         recyclerView.setAdapter(adapter);
-
         removeExistingData();
         createFreeService();
         loadData();
+
+
 
     }
 
@@ -105,7 +108,6 @@ public class HistoryActivity extends BaseActivity {
 
                     UserAction userAction = data.getValue(UserAction.class);
                     allUserActionList.add(userAction);
-
                     UserAction userActionDummy = new UserAction(userAction.getUserAction(), userAction.getActionDate());
                     userActionList.add(userActionDummy);
                 }

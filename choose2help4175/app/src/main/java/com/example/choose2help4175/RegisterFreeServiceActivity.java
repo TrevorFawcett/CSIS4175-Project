@@ -63,24 +63,21 @@ public class RegisterFreeServiceActivity extends BaseActivity {
 //        rdbSTypeCultural = findViewById(R.id.rdbSTypeCultural);
 //       rdbSTypeEducational = findViewById(R.id.rdbSTypeEducational);
 
-        btnRESave = findViewById(R.id.btnServiceRegister);
+        SName = rootView.findViewById(R.id.txtEventNameRE);
+        SShopName = rootView.findViewById(R.id.txtEventShopNameRE);
+        SDate = rootView.findViewById(R.id.txtEventDateRE);
+        STime = rootView.findViewById(R.id.txtEventNameRE);
+        SAddress = rootView.findViewById(R.id.txtEventLocationRE);
+        SDescription = rootView.findViewById(R.id.txtEventDescriptionRE);
 
-        SName = activityRegisterFreeServiceBinding.txtEventNameRE;
-        SShopName = activityRegisterFreeServiceBinding.txtEventShopNameRE;
-        SDate = activityRegisterFreeServiceBinding.txtEventDateRE;
-        STime = activityRegisterFreeServiceBinding.txtEventNameRE;
-        SAddress = activityRegisterFreeServiceBinding.txtEventLocationRE;
-        SDescription = activityRegisterFreeServiceBinding.txtEventDescriptionRE;
+        radioGroup1 = rootView.findViewById(R.id.rdbServiceType1);
+        radioGroup2 = rootView.findViewById(R.id.rdbServiceType2);
+        rdbSTypeFood = rootView.findViewById(R.id.rdbSTypeFood);
+        rdbSTypeAmenities = rootView.findViewById(R.id.rdbTypeAmenities);
+        rdbSTypeCultural = rootView.findViewById(R.id.rdbSTypeCultural);
+        rdbSTypeEducational = rootView.findViewById(R.id.rdbSTypeEducational);
 
-        radioGroup1 = activityRegisterFreeServiceBinding.rdbServiceType1;
-        radioGroup2 = activityRegisterFreeServiceBinding.rdbServiceType2;
-        rdbSTypeFood = activityRegisterFreeServiceBinding.rdbSTypeFood;
-        rdbSTypeAmenities = activityRegisterFreeServiceBinding.rdbTypeAmenities;
-        rdbSTypeCultural = activityRegisterFreeServiceBinding.rdbSTypeCultural;
-        rdbSTypeEducational = activityRegisterFreeServiceBinding.rdbSTypeEducational;
-
-        btnRESave = activityRegisterFreeServiceBinding.btnServiceRegister;
-
+        btnRESave = rootView.findViewById(R.id.btnServiceRegister);
 
         dao = new FreeServiceDAO();
 

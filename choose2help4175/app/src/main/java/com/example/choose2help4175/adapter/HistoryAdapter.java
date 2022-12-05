@@ -14,6 +14,7 @@ import com.example.choose2help4175.R;
 import com.example.choose2help4175.model.UserAction;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyViewHolder>{

@@ -73,9 +73,10 @@ public class DonationListsActivity extends BaseActivity implements OrganizationA
 //        txtOrganizationTitle = findViewById(R.id.txtTitleOZList);
 //        recyclerView = findViewById(R.id.OZRecyclerView);
 //        btnBringData = findViewById(R.id.btnOZBringList);
-        txtOrganizationTitle = activityDonationListsBinding.txtTitleOZList;
-        recyclerView = activityDonationListsBinding.OZRecyclerView;
-        btnBringData = activityDonationListsBinding.btnOZBringList;
+
+        txtOrganizationTitle = rootView.findViewById(R.id.txtTitleOZList);
+        recyclerView = rootView.findViewById(R.id.OZRecyclerView);
+        btnBringData = rootView.findViewById(R.id.btnOZBringList);
 
 //        txtOrganizationTitle.setText("Organization List");
 //        btnBringData.setText("Bring the List");

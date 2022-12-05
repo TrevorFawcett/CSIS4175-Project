@@ -67,10 +67,10 @@ public class FreeServiceListsActivity extends BaseActivity implements FreeServic
 //        btnFSBringList = findViewById(R.id.btnFSBringList);
 //        btnRegisterService = findViewById(R.id.btnRegisterService);
 
-        recyclerView = activityFreeserviceListsBinding.freeServiceRecyclerView;
-        txtFreeServiceTitle = activityFreeserviceListsBinding.txtTitleFreeService;
+        recyclerView = rootView.findViewById(R.id.freeServiceRecyclerView);
+        txtFreeServiceTitle = rootView.findViewById(R.id.txtTitleFreeService);
         btnFSBringList = rootView.findViewById(R.id.btnFSBringList);
-        btnRegisterService = activityFreeserviceListsBinding.btnRegisterService;
+        btnRegisterService = rootView.findViewById(R.id.btnRegisterService);
 
         dao = new FreeServiceDAO();
 
