@@ -10,6 +10,8 @@ public class Review {
     private String reviewAuthor;
     private String reviewDate;
 
+    public Review(){}
+
     public Review(String reviewId, String reviewText, String reviewAuthor, String reviewDate, String organizationId) {
         this.reviewId = reviewId;
         this.organizationId = organizationId;

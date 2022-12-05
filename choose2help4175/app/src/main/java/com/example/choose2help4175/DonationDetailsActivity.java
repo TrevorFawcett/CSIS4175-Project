@@ -2,6 +2,7 @@ package com.example.choose2help4175;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -14,12 +15,17 @@ import android.widget.TextView;
 
 import com.example.choose2help4175.DAO.FreeServiceDAO;
 import com.example.choose2help4175.DAO.ReviewDAO;
+import com.example.choose2help4175.adapter.FreeServiceAdapter;
+import com.example.choose2help4175.adapter.ReviewAdapter;
 import com.example.choose2help4175.databinding.ActivityDonationDetailsBinding;
 import com.example.choose2help4175.model.FreeService;
 import com.example.choose2help4175.model.Review;
 import com.example.choose2help4175.ui.navigation.BaseActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,11 +43,16 @@ public class DonationDetailsActivity extends BaseActivity {
     TextView txtOzPhoneNumber;
     Button btnDonation;
     Button btnVolunteer;
+    RecyclerView recyclerViewReviews;
     ReviewDAO dao;
+    ReviewAdapter adapter;
     private static final String TAG = "REVIEW_TABLE";
     List<String> ReviewAuthors = new ArrayList<>(Arrays.asList("Mary N", "Kate L", "Nick V"));
     List<String> ReviewTexts = new ArrayList<>(Arrays.asList("Great organization!", "I enjoyed volunteering for them!", "They helped my aunt a lot!"));
     List<String> ReviewDates = new ArrayList<>(Arrays.asList("11.11.2022", "12.11.2022", "13.11.2022"));
+
+    ArrayList<Review> allReviewList = new ArrayList<>();
+    ArrayList<Review> reviewList = new ArrayList<>();
 
 
     @Override
@@ -68,6 +79,7 @@ public class DonationDetailsActivity extends BaseActivity {
         txtOzPhoneNumber = activityDonationDetailsBinding.txtPhoneOZ;
         btnDonation = activityDonationDetailsBinding.btnDonationOZ;
         btnVolunteer = activityDonationDetailsBinding.btnVolunteerOZ;
+        recyclerViewReviews = activityDonationDetailsBinding.recyclerViewReviews;
 
         String ozTitle = getIntent().getExtras().getString("OZTITLE");
         String ozDescription = getIntent().getExtras().getString("OZDESCRIPTON");
@@ -92,6 +104,10 @@ public class DonationDetailsActivity extends BaseActivity {
 
         dao = new ReviewDAO();
 
+        adapter = new ReviewAdapter(this, reviewList);
+        //adapter.setListener();
+        recyclerViewReviews.setAdapter(adapter);
+
         btnDonation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,9 +128,11 @@ public class DonationDetailsActivity extends BaseActivity {
             }
         });
 
+        removeExistingData();
+        createReview();
+        loadData();
 
     }
-
 
     private void removeExistingData(){
         dao.remove().addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -147,6 +165,42 @@ public class DonationDetailsActivity extends BaseActivity {
             });
         }
 
-
     }
+
+    private void loadData(){
+
+        dao.get().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for(DataSnapshot data : snapshot.getChildren()){
+
+                    Review review = data.getValue(Review.class);
+                    allReviewList.add(review);
+
+                    //Review reviewNew = new Review(review.getImgFServiceType(), freeService.getfServiceName(), freeService.getfServiceDate());
+
+                    //.add(fsImgNameDate);
+                }
+
+//                if(getIntent().getExtras() != null){
+//
+//                    fsName = getIntent().getExtras().getString("FSName");
+//                    fsImg = getIntent().getExtras().getInt("FSTYPEIMAGE");
+//                    fsDate = getIntent().getExtras().getString("FSDATE");
+//
+//                    FreeService eventfs = new FreeService(fsImg, fsName, fsDate);
+//                    fsList.add(eventfs);
+//                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e(TAG, "Failed to load Review List");
+            }
+        });
+    }
+
+
 }

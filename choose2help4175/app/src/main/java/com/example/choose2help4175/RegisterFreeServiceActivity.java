@@ -1,7 +1,6 @@
 package com.example.choose2help4175;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -48,7 +47,7 @@ public class RegisterFreeServiceActivity extends BaseActivity {
         //setContentView(R.layout.activity_register_free_service_2);
 
         activityRegisterFreeServiceBinding = ActivityRegisterFreeServiceBinding.inflate(getLayoutInflater());
-        View rootView = getLayoutInflater().inflate(R.layout.activity_register_free_service_2, frameLayout);
+        View rootView = getLayoutInflater().inflate(R.layout.activity_register_free_service, frameLayout);
 
 //        SName = findViewById(R.id.txtEventNameRE);
 //        SShopName = findViewById(R.id.txtEventShopNameRE);
@@ -63,22 +62,22 @@ public class RegisterFreeServiceActivity extends BaseActivity {
 //        rdbSTypeAmenities = findViewById(R.id.rdbTypeAmenities);
 //        rdbSTypeCultural = findViewById(R.id.rdbSTypeCultural);
 //       rdbSTypeEducational = findViewById(R.id.rdbSTypeEducational);
-//
-//        btnRESave = findViewById(R.id.btnServiceRegister);
 
-//        SName = activityRegisterFreeServiceBinding.txtEventNameRE;
-//        SShopName = activityRegisterFreeServiceBinding.txtEventShopNameRE;
-//        SDate = activityRegisterFreeServiceBinding.txtEventDateRE;
-//        STime = activityRegisterFreeServiceBinding.txtEventNameRE;
-//        SAddress = activityRegisterFreeServiceBinding.txtEventLocationRE;
-//        SDescription = activityRegisterFreeServiceBinding.txtEventDescriptionRE;
-//
-//        radioGroup1 = activityRegisterFreeServiceBinding.rdbServiceType1;
-//        radioGroup2 = activityRegisterFreeServiceBinding.rdbServiceType2;
-//        rdbSTypeFood = activityRegisterFreeServiceBinding.rdbSTypeFood;
-//        rdbSTypeAmenities = activityRegisterFreeServiceBinding.rdbTypeAmenities;
-//        rdbSTypeCultural = activityRegisterFreeServiceBinding.rdbSTypeCultural;
-//        rdbSTypeEducational = activityRegisterFreeServiceBinding.rdbSTypeEducational;
+        btnRESave = findViewById(R.id.btnServiceRegister);
+
+        SName = activityRegisterFreeServiceBinding.txtEventNameRE;
+        SShopName = activityRegisterFreeServiceBinding.txtEventShopNameRE;
+        SDate = activityRegisterFreeServiceBinding.txtEventDateRE;
+        STime = activityRegisterFreeServiceBinding.txtEventNameRE;
+        SAddress = activityRegisterFreeServiceBinding.txtEventLocationRE;
+        SDescription = activityRegisterFreeServiceBinding.txtEventDescriptionRE;
+
+        radioGroup1 = activityRegisterFreeServiceBinding.rdbServiceType1;
+        radioGroup2 = activityRegisterFreeServiceBinding.rdbServiceType2;
+        rdbSTypeFood = activityRegisterFreeServiceBinding.rdbSTypeFood;
+        rdbSTypeAmenities = activityRegisterFreeServiceBinding.rdbTypeAmenities;
+        rdbSTypeCultural = activityRegisterFreeServiceBinding.rdbSTypeCultural;
+        rdbSTypeEducational = activityRegisterFreeServiceBinding.rdbSTypeEducational;
 
         btnRESave = activityRegisterFreeServiceBinding.btnServiceRegister;
 

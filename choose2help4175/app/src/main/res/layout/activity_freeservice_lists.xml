@@ -26,7 +26,7 @@
             android:id="@+id/freeServiceRecyclerView"
             android:layout_width="411dp"
             android:layout_height="381dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"

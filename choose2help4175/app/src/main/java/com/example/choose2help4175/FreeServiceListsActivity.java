@@ -69,13 +69,14 @@ public class FreeServiceListsActivity extends BaseActivity implements FreeServic
 
         recyclerView = activityFreeserviceListsBinding.freeServiceRecyclerView;
         txtFreeServiceTitle = activityFreeserviceListsBinding.txtTitleFreeService;
-        btnFSBringList = activityFreeserviceListsBinding.btnFSBringList;
+        btnFSBringList = rootView.findViewById(R.id.btnFSBringList);
         btnRegisterService = activityFreeserviceListsBinding.btnRegisterService;
 
         dao = new FreeServiceDAO();
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
+
 
         adapter = new FreeServiceAdapter(this, fsList);
         adapter.setListener(this);
@@ -89,15 +90,23 @@ public class FreeServiceListsActivity extends BaseActivity implements FreeServic
             }
         });
 
-        btnFSBringList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(FreeServiceListsActivity.this, "Clicking bring list" , Toast.LENGTH_SHORT).show();
+//        btnFSBringList.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(FreeServiceListsActivity.this, "Clicking bring list" , Toast.LENGTH_SHORT).show();
+//                removeExistingData();
+//                createFreeService();
+//
+//                loadData();
+//            }
+//        });
+
+        btnFSBringList.setOnClickListener((View view)->{
+            Toast.makeText(FreeServiceListsActivity.this, "Clicking bring list" , Toast.LENGTH_SHORT).show();
+
                 removeExistingData();
                 createFreeService();
-
                 loadData();
-            }
         });
 
     }
