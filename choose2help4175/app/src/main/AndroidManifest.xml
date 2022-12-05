@@ -102,6 +102,16 @@
         <activity
             android:name=".Blank"
             android:exported="true" />
+
+        <activity
+            android:name=".UserFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserDisplayActivity"
+            android:exported="false" />
+
+
+
     </application>
 
 </manifest>
