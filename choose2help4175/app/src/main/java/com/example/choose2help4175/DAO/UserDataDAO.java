@@ -27,6 +27,10 @@ public class UserDataDAO {
         return dbReference;
     }
 
+    public Query getUser(String uid){
+        return dbReference.child(uid);
+    }
+
     public Task<Void> remove() {
         return dbReference.removeValue();
     }

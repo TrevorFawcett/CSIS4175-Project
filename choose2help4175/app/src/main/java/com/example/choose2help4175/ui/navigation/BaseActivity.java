@@ -20,6 +20,8 @@ import com.example.choose2help4175.DonationListsActivity;
 import com.example.choose2help4175.FreeServiceListsActivity;
 import com.example.choose2help4175.HistoryActivity;
 import com.example.choose2help4175.R;
+import com.example.choose2help4175.UserDisplayActivity;
+import com.example.choose2help4175.UserFormActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -92,6 +94,12 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
                 Intent switchToHistoryIntent = new Intent(this, HistoryActivity.class);
                 startActivity(switchToHistoryIntent);
+                break;
+
+            case R.id.nav_userdata:
+
+                Intent switchToSettings = new Intent(this, UserDisplayActivity.class);
+                startActivity(switchToSettings);
                 break;
         }
 

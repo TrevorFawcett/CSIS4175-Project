@@ -22,7 +22,15 @@ public class UserData {
     private String postalCode;
 
     public UserData(){
-
+        this.email = "";
+        this.firstName = "";
+        this.lastName = "";
+        this.phoneNumber = "";
+        this.address = "";
+        this.city = "";
+        this.province = "";
+        this.country = "";
+        this.postalCode = "";
     }
 
     public UserData(String email){

@@ -69,12 +69,9 @@ public class UserFormActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-            createUserData(userInfo);
-
-                //DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-                //DatabaseReference usersRef = rootRef.child("users");
-                //User user = new User("John", 25, "male", "101 Main Street", "john@email.com");
-                //usersRef.child(uid).setValue(user);
+                createUserData(userInfo);
+                Intent intent = new Intent(UserFormActivity.this, UserDisplayActivity.class);
+                startActivity(intent);
 
             }
         });
