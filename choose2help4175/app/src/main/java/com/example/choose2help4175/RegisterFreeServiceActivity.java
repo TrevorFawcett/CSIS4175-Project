@@ -1,7 +1,6 @@
 package com.example.choose2help4175;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,11 +12,15 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.example.choose2help4175.DAO.FreeServiceDAO;
+import com.example.choose2help4175.databinding.ActivityRegisterFreeServiceBinding;
 import com.example.choose2help4175.model.FreeService;
+import com.example.choose2help4175.ui.navigation.BaseActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-public class RegisterFreeServiceActivity extends AppCompatActivity {
+public class RegisterFreeServiceActivity extends BaseActivity {
+
+    ActivityRegisterFreeServiceBinding activityRegisterFreeServiceBinding;
 
     private static final String TAG = RegisterFreeServiceActivity.class.getSimpleName();
     FreeServiceDAO dao;
@@ -41,23 +44,26 @@ public class RegisterFreeServiceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_free_service);
 
-        SName = findViewById(R.id.txtEventNameRE);
-        SShopName = findViewById(R.id.txtEventShopNameRE);
-        SDate = findViewById(R.id.txtEventDateRE);
-        STime = findViewById(R.id.txtEventTimeRE);
-        SAddress = findViewById(R.id.txtEventLocationRE);
-        SDescription = findViewById(R.id.txtEventDescriptionRE);
+       // setContentView(R.layout.activity_register_free_service);
+        activityRegisterFreeServiceBinding = ActivityRegisterFreeServiceBinding.inflate(getLayoutInflater());
+        View rootView = getLayoutInflater().inflate(R.layout.activity_register_free_service, frameLayout);
 
-        radioGroup1 = findViewById(R.id.rdbServiceType1);
-        radioGroup2 = findViewById(R.id.rdbServiceType2);
-        rdbSTypeFood = findViewById(R.id.rdbSTypeFood);
-        rdbSTypeAmenities = findViewById(R.id.rdbTypeAmenities);
-        rdbSTypeCultural = findViewById(R.id.rdbSTypeCultural);
-        rdbSTypeEducational = findViewById(R.id.rdbSTypeEducational);
+        SName = rootView.findViewById(R.id.txtEventNameRE);
+        SShopName = rootView.findViewById(R.id.txtEventShopNameRE);
+        SDate = rootView.findViewById(R.id.txtEventDateRE);
+        STime = rootView.findViewById(R.id.txtEventTimeRE);
+        SAddress = rootView.findViewById(R.id.txtEventLocationRE);
+        SDescription = rootView.findViewById(R.id.txtEventDescriptionRE);
 
-        btnRESave = findViewById(R.id.btnServiceRegister);
+        radioGroup1 = rootView.findViewById(R.id.rdbServiceType1);
+        radioGroup2 = rootView.findViewById(R.id.rdbServiceType2);
+        rdbSTypeFood = rootView.findViewById(R.id.rdbSTypeFood);
+        rdbSTypeAmenities = rootView.findViewById(R.id.rdbTypeAmenities);
+        rdbSTypeCultural = rootView.findViewById(R.id.rdbSTypeCultural);
+        rdbSTypeEducational = rootView.findViewById(R.id.rdbSTypeEducational);
+
+        btnRESave = rootView.findViewById(R.id.btnServiceRegister);
         dao = new FreeServiceDAO();
 
         radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

@@ -12,6 +12,12 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/nav_map"
+        android:name="com.example.choose2help4175.ui.gallery.GalleryFragment"
+        android:label="@string/menu_map"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
         android:id="@+id/nav_donations"
         android:name="com.example.choose2help4175.ui.gallery.GalleryFragment"
         android:label="@string/menu_donations"
