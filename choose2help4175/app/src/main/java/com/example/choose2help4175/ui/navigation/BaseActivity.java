@@ -24,6 +24,7 @@ import com.example.choose2help4175.HistoryActivity;
 import com.example.choose2help4175.R;
 import com.example.choose2help4175.UserDisplayActivity;
 import com.example.choose2help4175.UserFormActivity;
+import com.example.choose2help4175.databinding.ActivityBaseBinding;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -40,6 +41,8 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     ActionBarDrawerToggle toggle;
     TextView userName;
     TextView userEmail;
+    ActivityBaseBinding baseActivityBinding;
+    View view;
 
 
     public BaseActivity() {
@@ -50,9 +53,10 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_base);
         //frameLayout = (FrameLayout) findViewById(R.id.container);
-        LayoutInflater layoutInflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.activity_base, drawer );
-        setContentView(view);
+        baseActivityBinding = ActivityBaseBinding.inflate(getLayoutInflater());
+        //LayoutInflater layoutInflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        view = getLayoutInflater().inflate(R.layout.activity_base, drawer );
+
         context=this;
         initView();
         frameLayout = (FrameLayout) findViewById(R.id.container);
@@ -65,9 +69,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void initView() {
-        toolbar = findViewById(R.id.toolbar);
-        drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        toolbar = view.findViewById(R.id.toolbar);
+        drawer = view.findViewById(R.id.drawer_layout);
+        NavigationView navigationView = view.findViewById(R.id.nav_view);
 
         toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -81,12 +85,13 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         ArrayList<String> userInfo = new ArrayList<>();
         checkCurrentUser(userInfo);
 
-        userEmail = drawer.findViewById(R.id.txtViewUserEmail);
+        //userEmail = drawer.findViewById(R.id.txtViewUserEmail);
 
         //userEmail = drawer.findViewById(R.id.txtViewUserEmail);
 
         //userEmail= findViewById(R.id.txtViewUserEmail);
         //userName.setText("");
+        userEmail = view.findViewById(R.id.txtViewUserEmail);
         userEmail.setText(userInfo.get(0));
 
     }
