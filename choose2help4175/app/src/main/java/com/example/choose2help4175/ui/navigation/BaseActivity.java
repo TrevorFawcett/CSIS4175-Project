@@ -24,8 +24,10 @@ import android.widget.Toast;
 import com.example.choose2help4175.CharityMap;
 import com.example.choose2help4175.DonationListsActivity;
 import com.example.choose2help4175.FreeServiceListsActivity;
+import com.example.choose2help4175.FreeServiceReservationActivity;
 import com.example.choose2help4175.HistoryActivity;
 import com.example.choose2help4175.R;
+import com.example.choose2help4175.RegisterFreeServiceActivity;
 import com.example.choose2help4175.UserDisplayActivity;
 import com.example.choose2help4175.UserFormActivity;
 import com.example.choose2help4175.databinding.ActivityBaseBinding;
@@ -129,6 +131,12 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
                 Intent switchToFreeServiceIntent = new Intent(this, FreeServiceListsActivity.class);
                 startActivity(switchToFreeServiceIntent);
+                break;
+
+            case R.id.nav_reserve:
+
+                Intent switchToReservationIntent = new Intent(this, RegisterFreeServiceActivity.class);
+                startActivity(switchToReservationIntent);
                 break;
 
             case R.id.nav_donationhistory:
