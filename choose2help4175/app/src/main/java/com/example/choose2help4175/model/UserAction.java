@@ -12,10 +12,14 @@ public class UserAction{
 
 
     public UserAction(String userId, String userEmail) {
-        this.userAction = userAction;
+        this.userAction = userId;
         this.userId = userEmail;
     }
 
+    public UserAction(String userAction){
+        this.userAction = userAction;
+
+    }
     public String getUserId() {
         return userId;
     }

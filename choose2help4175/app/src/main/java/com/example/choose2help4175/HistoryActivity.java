@@ -85,7 +85,10 @@ public class HistoryActivity extends BaseActivity {
                 for(DataSnapshot data : snapshot.getChildren()){
                     Log.d("HISTORY", "We are at line 89");
                     UserAction userAction = data.getValue(UserAction.class);
-                    UserAction userActionFull = new UserAction(userAction.getUserId(),userAction.getUserAction());
+                    UserAction userActionFull = new UserAction(userAction.getUserAction());
+                    //Log.d("HISTORY_userid",": " + userAction.getUserId());
+                    Log.d("HISTORY_userAction", ": " +userAction.getUserAction());
+
                     userActionList.add(userActionFull);
                 }
                 adapter.notifyDataSetChanged();

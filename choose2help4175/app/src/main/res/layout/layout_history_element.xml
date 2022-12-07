@@ -12,10 +12,5 @@
         android:gravity="center"
         android:text="@string/history_txtView" />
 
-    <TextView
-        android:id="@+id/txtViewActionDate"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_weight="1"
-        android:text="@string/history_txtView" />
+
 </LinearLayout>
