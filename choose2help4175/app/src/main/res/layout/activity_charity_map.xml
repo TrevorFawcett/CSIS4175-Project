@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".CharityMap">
 
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="351dp"
+        android:layout_height="306dp"
+        android:layout_below="@+id/linearlayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:context="com.example.choose2help4175.CharityMap"
+        tools:ignore="MissingConstraints,UnknownId" />
 
     <TextView
         android:layout_width="169dp"
@@ -17,145 +31,69 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444">
+        app:layout_constraintVertical_bias="1.0">
 
     </TextView>
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="243dp"
-        android:layout_height="316dp"
+        android:layout_width="213dp"
+        android:layout_height="270dp"
+        android:layout_marginBottom="4dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.916"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map"
-        app:layout_constraintVertical_bias="0.32"
         tools:ignore="MissingConstraints">
 
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:id="@+id/char1Btn"
+            android:layout_width="207dp"
+            android:layout_height="53dp"
             android:gravity="left|center_vertical"
             android:text="BC Children's Hospital" />
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:id="@+id/char2Btn"
+            android:layout_width="207dp"
+            android:layout_height="53dp"
             android:gravity="left|center_vertical"
             android:text="Big Brothers" />
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:id="@+id/char3Btn"
+            android:layout_width="206dp"
+            android:layout_height="53dp"
             android:gravity="left|center_vertical"
             android:text="Downtown Eastside Women's Centre" />
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:id="@+id/char4Btn"
+            android:layout_width="207dp"
+            android:layout_height="53dp"
             android:gravity="left|center_vertical"
             android:text="Mom2mom" />
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:id="@+id/char5Btn"
+            android:layout_width="207dp"
+            android:layout_height="53dp"
             android:gravity="left|center_vertical"
             android:text="Seva Canada" />
 
     </LinearLayout>
 
-
-    <fragment
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="382dp"
-        android:layout_height="321dp"
-        android:layout_below="@+id/linearlayout"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Select an organization."
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:context="com.example.choose2help4175.CharityMap"
-        tools:ignore="MissingConstraints,UnknownId"
-        tools:layout_editor_absoluteY="69dp" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="131dp"
-        android:layout_height="57dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
-        app:layout_constraintHorizontal_bias="0.608"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/dweclogo" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="133dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/mom2mom" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="123dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/map"
-        app:srcCompat="@drawable/child" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="123dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/bbg" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="132dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/sevaa" />
-
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="16dp"
-        tools:openDrawer="start">
-
-        <include
-            layout="@layout/app_bar_base"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/nav_view"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:fitsSystemWindows="true"
-            app:headerLayout="@layout/nav_header_main"
-            app:menu="@menu/activity_base_drawer"
-            tools:ignore="MissingConstraints" />
-    </androidx.drawerlayout.widget.DrawerLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
