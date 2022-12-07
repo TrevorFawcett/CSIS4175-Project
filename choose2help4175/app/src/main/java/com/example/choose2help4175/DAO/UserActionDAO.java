@@ -6,18 +6,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
-public class UserDataDAO {
+public class UserActionDAO {
     private DatabaseReference dbReference;
 
-    public UserDataDAO(){
-
+    public UserActionDAO(){
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         dbReference = db.getReference(UserData.class.getSimpleName());
     }
 
-    public Task<Void> createUserData(UserData userData, String uid){
+    public Task<Void> createUserAction(UserData userAction, String uid){
         //return dbReference.push().setValue(userData);
-        return dbReference.child(uid).setValue(userData);
+        return dbReference.child(uid).setValue(userAction);
     }
 
     public Query get(){

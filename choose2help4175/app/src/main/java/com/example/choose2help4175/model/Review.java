@@ -28,10 +28,10 @@ public class Review {
         this.organizationId = organizationId;
     }
 
-    public Review(String reviewText, String reviewAuthor, String reviewDate) {
+    public Review(String reviewText, String reviewAuthor, String organizationId) {
         this.reviewText = reviewText;
         this.reviewAuthor = reviewAuthor;
-        this.reviewDate = reviewDate;
+        this.organizationId = organizationId;
     }
 
     public String getReviewId() {

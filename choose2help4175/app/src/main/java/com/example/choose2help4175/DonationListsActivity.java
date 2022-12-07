@@ -135,6 +135,7 @@ public class DonationListsActivity extends BaseActivity implements OrganizationA
         int ozImage = organization.getOzImages();
         String ozDonationURL = organization.getOzDonationURL();
         String ozVolunteerURL = organization.getOzVolunteerURL();
+        String ozCode = organization.getOzCode();
 
         Intent intent = new Intent(this, DonationDetailsActivity.class);
 
@@ -149,6 +150,7 @@ public class DonationListsActivity extends BaseActivity implements OrganizationA
         intent.putExtra("OZIMAGE", ozImage);
         intent.putExtra("OZDONATIONURL", ozDonationURL);
         intent.putExtra("OZVOLUNTEERURL", ozVolunteerURL);
+        intent.putExtra("OZCODE",ozCode);
 
         startActivity(intent);
 

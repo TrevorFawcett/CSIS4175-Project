@@ -5,17 +5,21 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.MenuItemCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.choose2help4175.CharityMap;
 import com.example.choose2help4175.DonationListsActivity;
@@ -40,7 +44,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawer;
     ActionBarDrawerToggle toggle;
     TextView userName;
-    TextView userEmail;
+    //TextView userEmail;
     ActivityBaseBinding baseActivityBinding;
     View view;
 
@@ -51,13 +55,13 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_base);
+        setContentView(R.layout.activity_base);
         //frameLayout = (FrameLayout) findViewById(R.id.container);
-        baseActivityBinding = ActivityBaseBinding.inflate(getLayoutInflater());
+        //baseActivityBinding = ActivityBaseBinding.inflate(getLayoutInflater());
         //LayoutInflater layoutInflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        view = getLayoutInflater().inflate(R.layout.activity_base, drawer );
-
-        context=this;
+        //view = getLayoutInflater().inflate(R.layout.activity_base, drawer );
+        //setContentView(view);
+        //context=this;
         initView();
         frameLayout = (FrameLayout) findViewById(R.id.container);
         drawer = findViewById(R.id.drawer_layout);
@@ -66,38 +70,41 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
 
+
     }
 
+
     private void initView() {
-        toolbar = view.findViewById(R.id.toolbar);
-        drawer = view.findViewById(R.id.drawer_layout);
-        NavigationView navigationView = view.findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
 
         toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
         drawer.addDrawerListener(toggle);
 
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        //This string will be changed based on user login
-        //String emailAdd = checkCurrentUser();
-        ArrayList<String> userInfo = new ArrayList<>();
-        checkCurrentUser(userInfo);
-
-        //userEmail = drawer.findViewById(R.id.txtViewUserEmail);
-
-        //userEmail = drawer.findViewById(R.id.txtViewUserEmail);
-
-        //userEmail= findViewById(R.id.txtViewUserEmail);
-        //userName.setText("");
-        userEmail = view.findViewById(R.id.txtViewUserEmail);
-        userEmail.setText(userInfo.get(0));
 
     }
 
+
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        ArrayList<String> userInfo = new ArrayList<>();
+        checkCurrentUser(userInfo);
+        final TextView userEmail = findViewById(R.id.txtViewUserEmail);
+
+        //userEmail = view.findViewById(R.id.txtViewUserEmail);
+        userEmail.setText(userInfo.get(0).toString());
+
+        Log.d(this.getClass().getSimpleName(), userEmail.getText().toString());
+        Toast.makeText(this, "User email: " + userEmail.getText().toString(),
+                Toast.LENGTH_LONG).show();
+
 
         menuItem.setChecked(true);
 
@@ -146,7 +153,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             // User is signed in
             String email = user.getEmail();
             String uid = user.getUid();
-            String name = user.getDisplayName();
+            //String name = user.getDisplayName();
             //emailAdd = email;
             userInfo.add(email);
             userInfo.add(uid);
@@ -158,4 +165,5 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         }
         // [END check_current_user]
     }
+
 }

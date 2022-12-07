@@ -40,7 +40,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
 
         viewHolder.txtViewReviewText = itemView.findViewById(R.id.txtViewReviewAuthor);
         viewHolder.txtViewReviewText = itemView.findViewById(R.id.txtViewReviewText);
-        viewHolder.txtViewReviewDate = itemView.findViewById(R.id.txtFreeServiceDate);
+
 
         return viewHolder;
     }
@@ -49,7 +49,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
     public void onBindViewHolder(@NonNull ReviewAdapter.ReviewViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.txtViewReviewAuthor.setText(ReviewList.get(position).getReviewAuthor());
         holder.txtViewReviewText.setText(ReviewList.get(position).getReviewText());
-        holder.txtViewReviewDate.setText(ReviewList.get(position).getReviewDate());
+
 
     }
     @Override
@@ -60,7 +60,6 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
 
     public class ReviewViewHolder extends RecyclerView.ViewHolder {
         TextView txtViewReviewAuthor;
-        TextView txtViewReviewDate;
         TextView txtViewReviewText;
 
         public ReviewViewHolder(@NonNull View itemView) {
@@ -68,7 +67,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
             super(itemView);
             txtViewReviewAuthor = itemView.findViewById(R.id.txtViewReviewAuthor);
             txtViewReviewText = itemView.findViewById(R.id.txtViewReviewText);
-            txtViewReviewDate = itemView.findViewById(R.id.txtViewDate);
+
         }
     }
 

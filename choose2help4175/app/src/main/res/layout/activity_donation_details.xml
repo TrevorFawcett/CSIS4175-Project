@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="0dp"
+    android:fillViewport="true">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".DonationDetailsActivity">
+
 
     <ImageView
         android:id="@+id/imgOZ"
@@ -105,17 +112,43 @@
         app:layout_constraintTop_toBottomOf="@+id/txtEmailOZ"
         tools:textColor="@android:color/white" />
 
+    <Button
+        android:id="@+id/btnAddReview"
+        android:layout_width="115dp"
+        android:layout_height="57dp"
+        android:text="Add Review"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewReviews"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDonationOZ"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnSeeReviews"
+        android:layout_width="124dp"
+        android:layout_height="52dp"
+        android:text="See Reviews"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewReviews"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVolunteerOZ" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewReviews"
-        android:layout_width="367dp"
-        android:layout_height="131dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="364dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="16dp"
         android:layout_marginRight="44dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnDonationOZ"
-        app:layout_constraintVertical_bias="0.324" />
+        app:layout_constraintStart_toStartOf="parent" >
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
