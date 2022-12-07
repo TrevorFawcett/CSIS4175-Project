@@ -1,0 +1,33 @@
+package com.example.choose2help4175.DAO;
+
+import com.example.choose2help4175.model.UserData;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
+public class UserActionDAO {
+    private DatabaseReference dbReference;
+
+    public UserActionDAO(){
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        dbReference = db.getReference(UserData.class.getSimpleName());
+    }
+
+    public Task<Void> createUserAction(UserData userAction, String uid){
+        //return dbReference.push().setValue(userData);
+        return dbReference.child(uid).setValue(userAction);
+    }
+
+    public Query get(){
+        return dbReference;
+    }
+
+    public Query getUser(String uid){
+        return dbReference.child(uid);
+    }
+
+    public Task<Void> remove() {
+        return dbReference.removeValue();
+    }
+}

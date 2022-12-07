@@ -53,7 +53,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyV
         public historyViewHolder(@NonNull View itemView) {
             super(itemView);
             txtViewAction = itemView.findViewById(R.id.txtViewAction);
-            txtViewActionDate = itemView.findViewById(R.id.txtViewDate);
+            txtViewActionDate = itemView.findViewById(R.id.txtViewActionDate);
         }
     }
 }

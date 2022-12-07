@@ -2,6 +2,7 @@ package com.example.choose2help4175;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -20,6 +21,7 @@ import com.example.choose2help4175.adapter.ReviewAdapter;
 import com.example.choose2help4175.databinding.ActivityDonationDetailsBinding;
 import com.example.choose2help4175.model.FreeService;
 import com.example.choose2help4175.model.Review;
+import com.example.choose2help4175.model.UserAction;
 import com.example.choose2help4175.ui.navigation.BaseActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -33,7 +35,7 @@ import java.util.List;
 
 public class DonationDetailsActivity extends BaseActivity {
 
-    ActivityDonationDetailsBinding activityDonationDetailsBinding;
+   ActivityDonationDetailsBinding activityDonationDetailsBinding;
 
     ImageView imgOz;
     TextView txtOzTitle;
@@ -43,16 +45,21 @@ public class DonationDetailsActivity extends BaseActivity {
     TextView txtOzPhoneNumber;
     Button btnDonation;
     Button btnVolunteer;
+    Button btnAddReview;
+    Button btnSeeReview;
     RecyclerView recyclerViewReviews;
     ReviewDAO dao;
     ReviewAdapter adapter;
+    String ozCode;
     private static final String TAG = "REVIEW_TABLE";
     List<String> ReviewAuthors = new ArrayList<>(Arrays.asList("Mary N", "Kate L", "Nick V"));
     List<String> ReviewTexts = new ArrayList<>(Arrays.asList("Great organization!", "I enjoyed volunteering for them!", "They helped my aunt a lot!"));
-    List<String> ReviewDates = new ArrayList<>(Arrays.asList("11.11.2022", "12.11.2022", "13.11.2022"));
+
 
     ArrayList<Review> allReviewList = new ArrayList<>();
     ArrayList<Review> reviewList = new ArrayList<>();
+
+
 
 
     @Override
@@ -79,6 +86,8 @@ public class DonationDetailsActivity extends BaseActivity {
         txtOzPhoneNumber = rootView.findViewById(R.id.txtPhoneOZ);
         btnDonation = rootView.findViewById(R.id.btnDonationOZ);
         btnVolunteer = rootView.findViewById(R.id.btnVolunteerOZ);
+        btnAddReview = rootView.findViewById(R.id.btnAddReview);
+        btnSeeReview = rootView.findViewById(R.id.btnSeeReviews);
 
         recyclerViewReviews = rootView.findViewById(R.id.recyclerViewReviews);
 
@@ -93,6 +102,7 @@ public class DonationDetailsActivity extends BaseActivity {
         int ozImage = getIntent().getExtras().getInt("OZIMAGE");
         String ozDonationURL = getIntent().getExtras().getString("OZDONATIONURL");
         String ozVolunteerURL = getIntent().getExtras().getString("OZVOLUNTEERURL");
+        ozCode = getIntent().getExtras().getString("OZCODE");
 
         imgOz.setImageResource(ozImage);
         txtOzTitle.setText(ozTitle);
@@ -105,9 +115,13 @@ public class DonationDetailsActivity extends BaseActivity {
 
         dao = new ReviewDAO();
 
+
         adapter = new ReviewAdapter(this, reviewList);
         //adapter.setListener();
         recyclerViewReviews.setAdapter(adapter);
+
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        recyclerViewReviews.setLayoutManager(manager);
 
         btnDonation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,9 +143,21 @@ public class DonationDetailsActivity extends BaseActivity {
             }
         });
 
-        removeExistingData();
-        createReview();
-        loadData();
+        btnAddReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DonationDetailsActivity.this, WriteReviewActivity.class);
+                intent.putExtra("OZCODE", ozCode);
+                startActivity(intent);
+            }
+        });
+
+        btnSeeReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadData();
+            }
+        });
 
     }
 
@@ -149,24 +175,7 @@ public class DonationDetailsActivity extends BaseActivity {
         });
     }
 
-    private void createReview(){
 
-        for(int i = 0; i < ReviewTexts.size(); i++){
-            Review review = new Review(ReviewTexts.get(i), ReviewAuthors.get(i), ReviewDates.get(i));
-            dao.createReview(review).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void unused) {
-                    Log.d(TAG, "Success add review");
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.e(TAG, "Failed to create review");
-                }
-            });
-        }
-
-    }
 
     private void loadData(){
 
@@ -175,24 +184,12 @@ public class DonationDetailsActivity extends BaseActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for(DataSnapshot data : snapshot.getChildren()){
-
                     Review review = data.getValue(Review.class);
-                    allReviewList.add(review);
+                    Review reviewFull = new Review(review.getReviewText(),review.getReviewAuthor(),ozCode );
+                    reviewList.add(reviewFull);
 
-                    //Review reviewNew = new Review(review.getImgFServiceType(), freeService.getfServiceName(), freeService.getfServiceDate());
-
-                    //.add(fsImgNameDate);
                 }
 
-//                if(getIntent().getExtras() != null){
-//
-//                    fsName = getIntent().getExtras().getString("FSName");
-//                    fsImg = getIntent().getExtras().getInt("FSTYPEIMAGE");
-//                    fsDate = getIntent().getExtras().getString("FSDATE");
-//
-//                    FreeService eventfs = new FreeService(fsImg, fsName, fsDate);
-//                    fsList.add(eventfs);
-//                }
                 adapter.notifyDataSetChanged();
             }
 
@@ -205,3 +202,5 @@ public class DonationDetailsActivity extends BaseActivity {
 
 
 }
+
+

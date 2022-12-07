@@ -5,22 +5,37 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.MenuItemCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.choose2help4175.CharityMap;
 import com.example.choose2help4175.DonationListsActivity;
 import com.example.choose2help4175.FreeServiceListsActivity;
 import com.example.choose2help4175.HistoryActivity;
 import com.example.choose2help4175.R;
+import com.example.choose2help4175.UserDisplayActivity;
+import com.example.choose2help4175.UserFormActivity;
+import com.example.choose2help4175.databinding.ActivityBaseBinding;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     protected FrameLayout frameLayout;
@@ -28,6 +43,10 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     private Toolbar toolbar;
     private DrawerLayout drawer;
     ActionBarDrawerToggle toggle;
+    TextView userName;
+    //TextView userEmail;
+    ActivityBaseBinding baseActivityBinding;
+    View view;
 
 
     public BaseActivity() {
@@ -37,14 +56,23 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
-        context=this;
+        //frameLayout = (FrameLayout) findViewById(R.id.container);
+        //baseActivityBinding = ActivityBaseBinding.inflate(getLayoutInflater());
+        //LayoutInflater layoutInflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //view = getLayoutInflater().inflate(R.layout.activity_base, drawer );
+        //setContentView(view);
+        //context=this;
         initView();
         frameLayout = (FrameLayout) findViewById(R.id.container);
-        //DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         navigationView.setNavigationItemSelectedListener(this);
+
+
+
     }
+
 
     private void initView() {
         toolbar = findViewById(R.id.toolbar);
@@ -53,15 +81,30 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
         toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
         drawer.addDrawerListener(toggle);
 
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
+
     }
+
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        ArrayList<String> userInfo = new ArrayList<>();
+        checkCurrentUser(userInfo);
+        final TextView userEmail = findViewById(R.id.txtViewUserEmail);
+
+        //userEmail = view.findViewById(R.id.txtViewUserEmail);
+        userEmail.setText(userInfo.get(0).toString());
+
+        Log.d(this.getClass().getSimpleName(), userEmail.getText().toString());
+        Toast.makeText(this, "User email: " + userEmail.getText().toString(),
+                Toast.LENGTH_LONG).show();
+
 
         menuItem.setChecked(true);
 
@@ -93,8 +136,34 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 Intent switchToHistoryIntent = new Intent(this, HistoryActivity.class);
                 startActivity(switchToHistoryIntent);
                 break;
+
+            case R.id.nav_userdata:
+
+                Intent switchToSettings = new Intent(this, UserDisplayActivity.class);
+                startActivity(switchToSettings);
+                break;
         }
 
         return true;
     }
+    public void checkCurrentUser(ArrayList<String> userInfo) {
+        // [START check_current_user]
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // User is signed in
+            String email = user.getEmail();
+            String uid = user.getUid();
+            //String name = user.getDisplayName();
+            //emailAdd = email;
+            userInfo.add(email);
+            userInfo.add(uid);
+
+
+        } else {
+            // No user is signed in
+
+        }
+        // [END check_current_user]
+    }
+
 }
