@@ -85,9 +85,7 @@ public class WriteReviewActivity extends BaseActivity {
 //                }, 2000);
             }
         });
-
     }
-
 
     private void createReview(){
 

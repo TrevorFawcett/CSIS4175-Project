@@ -1,27 +1,21 @@
 package com.example.choose2help4175;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.choose2help4175.DAO.FreeServiceDAO;
-import com.example.choose2help4175.DAO.HistoryDAO;
-import com.example.choose2help4175.R;
-import com.example.choose2help4175.adapter.FreeServiceAdapter;
+import com.example.choose2help4175.DAO.UserActionDAO;
 import com.example.choose2help4175.adapter.HistoryAdapter;
 import com.example.choose2help4175.databinding.ActivityHistoryBinding;
-import com.example.choose2help4175.model.FreeService;
 import com.example.choose2help4175.model.UserAction;
 import com.example.choose2help4175.model.UserData;
 import com.example.choose2help4175.ui.navigation.BaseActivity;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -35,8 +29,10 @@ import java.util.List;
 public class HistoryActivity extends BaseActivity {
     ActivityHistoryBinding activityHistoryBinding;
     RecyclerView recyclerView;
-    HistoryDAO dao;
+    UserActionDAO userActionDAO;
     HistoryAdapter adapter;
+    Button btnSeeHistory;
+    String userEmail;
 
     ArrayList<UserAction> userActionList = new ArrayList<>();
     ArrayList<UserAction> allUserActionList = new ArrayList<>();
@@ -56,74 +52,42 @@ public class HistoryActivity extends BaseActivity {
         //setContentView(R.layout.activity_history);
 
         recyclerView = rootView.findViewById(R.id.recyclerViewHistory);
-        dao = new HistoryDAO();
+        userActionDAO = new UserActionDAO();
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
 
         adapter = new HistoryAdapter(this, userActionList);
         recyclerView.setAdapter(adapter);
-        removeExistingData();
-        createUserAction();
-        loadData();
 
-        ArrayList<String> userInfo = new ArrayList<>();
-        checkCurrentUser(userInfo);
-        String userName= userInfo.get(2);
+        btnSeeHistory = findViewById(R.id.btnSeeHistory);
 
-        //Log.d(this.getClass().getSimpleName(), userEmail.getText().toString());
-        Toast.makeText(this, "User name: " + userName,
-                Toast.LENGTH_LONG).show();
-
-
-
-    }
-
-    private void removeExistingData(){
-        dao.remove().addOnSuccessListener(new OnSuccessListener<Void>() {
+        btnSeeHistory.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSuccess(Void unused) {
-                Log.d(TAG, "Success Remove History Table");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.e(TAG, "Failed to remove HistoryTable");
+            public void onClick(View view) {
+                loadData();
             }
         });
-    }
 
-    private void createUserAction(){
-        for(int i = 0; i < userActions.size(); i++){
-            UserAction userAction = new UserAction(userActions.get(i),userDates.get(i));
-            dao.createUserAction(userAction).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void unused) {
-                    Log.d(TAG, "Success add User Action");
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.e(TAG, "Failed to create User Action");
-                }
-            });
-                }
+        //String userName= userInfo.get(2);
+
+        //Log.d(this.getClass().getSimpleName(), userEmail.getText().toString());
+        //Toast.makeText(this, "User name: " + userName,
+          //      Toast.LENGTH_LONG).show();
+
+
     }
 
     private void loadData(){
-
-        dao.get().addValueEventListener(new ValueEventListener() {
+        userActionDAO.get().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                 for(DataSnapshot data : snapshot.getChildren()){
-
+                    Log.d("HISTORY", "We are at line 89");
                     UserAction userAction = data.getValue(UserAction.class);
-                    allUserActionList.add(userAction);
-                    UserAction userActionDummy = new UserAction(userAction.getUserAction(), userAction.getActionDate());
-                    userActionList.add(userActionDummy);
+                    UserAction userActionFull = new UserAction(userAction.getUserId(),userAction.getUserAction());
+                    userActionList.add(userActionFull);
                 }
-
                 adapter.notifyDataSetChanged();
             }
 

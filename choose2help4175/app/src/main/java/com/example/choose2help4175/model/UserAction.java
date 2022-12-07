@@ -10,9 +10,10 @@ public class UserAction{
 
     }
 
-    public UserAction(String userAction, String actionDate) {
+
+    public UserAction(String userId, String userEmail) {
         this.userAction = userAction;
-        this.actionDate = actionDate;
+        this.userId = userEmail;
     }
 
     public String getUserId() {

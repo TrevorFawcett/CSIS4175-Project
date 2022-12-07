@@ -90,6 +90,7 @@
             android:exported="true"
             android:theme="@style/Theme.Choose2help4175.NoActionBar"/>
 
+
         <activity
             android:name=".LoginActivity"
             android:exported="true" >
@@ -98,6 +99,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".SignupActivity"
