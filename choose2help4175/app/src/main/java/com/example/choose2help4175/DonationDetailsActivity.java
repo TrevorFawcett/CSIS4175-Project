@@ -1,7 +1,6 @@
 package com.example.choose2help4175;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,17 +13,17 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.choose2help4175.DAO.FreeServiceDAO;
 import com.example.choose2help4175.DAO.ReviewDAO;
-import com.example.choose2help4175.adapter.FreeServiceAdapter;
+import com.example.choose2help4175.DAO.UserActionDAO;
 import com.example.choose2help4175.adapter.ReviewAdapter;
 import com.example.choose2help4175.databinding.ActivityDonationDetailsBinding;
-import com.example.choose2help4175.model.FreeService;
 import com.example.choose2help4175.model.Review;
 import com.example.choose2help4175.model.UserAction;
 import com.example.choose2help4175.ui.navigation.BaseActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -48,16 +47,20 @@ public class DonationDetailsActivity extends BaseActivity {
     Button btnAddReview;
     Button btnSeeReview;
     RecyclerView recyclerViewReviews;
-    ReviewDAO dao;
+    ReviewDAO reviewDAO;
+    UserActionDAO userActionDAO;
     ReviewAdapter adapter;
     String ozCode;
+    String userEmail;
+    String userActionStr;
+
     private static final String TAG = "REVIEW_TABLE";
     List<String> ReviewAuthors = new ArrayList<>(Arrays.asList("Mary N", "Kate L", "Nick V"));
     List<String> ReviewTexts = new ArrayList<>(Arrays.asList("Great organization!", "I enjoyed volunteering for them!", "They helped my aunt a lot!"));
 
 
-    ArrayList<Review> allReviewList = new ArrayList<>();
     ArrayList<Review> reviewList = new ArrayList<>();
+    ArrayList<UserAction>  userActionList = new ArrayList<>();
 
 
 
@@ -113,7 +116,12 @@ public class DonationDetailsActivity extends BaseActivity {
         txtOzEmail.setText(ozEmail);
         txtOzPhoneNumber.setText(ozPhoneNumber);
 
-        dao = new ReviewDAO();
+        ArrayList<String> userInfo = new ArrayList<>();
+        checkCurrentUser(userInfo);
+        userEmail = userInfo.get(0);
+        userActionStr = "";
+        reviewDAO = new ReviewDAO();
+        userActionDAO = new UserActionDAO();
 
 
         adapter = new ReviewAdapter(this, reviewList);
@@ -126,7 +134,8 @@ public class DonationDetailsActivity extends BaseActivity {
         btnDonation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                userActionStr = "User donated to " +ozTitle;
+                createUserHistoryElement(userActionStr, userEmail);
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(ozDonationURL));
                 startActivity(i);
@@ -136,10 +145,12 @@ public class DonationDetailsActivity extends BaseActivity {
         btnVolunteer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                userActionStr = "User volunteered at " +ozTitle;
+                createUserHistoryElement(userActionStr, userEmail);
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(ozVolunteerURL));
                 startActivity(i);
+
             }
         });
 
@@ -155,47 +166,68 @@ public class DonationDetailsActivity extends BaseActivity {
         btnSeeReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadData();
+                loadReviewData();
             }
         });
 
     }
 
-    private void removeExistingData(){
-        dao.remove().addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void unused) {
-                Log.d(TAG, "Success Remove Review Table");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.e(TAG, "Failed to remove Review table");
-            }
-        });
+
+
+
+    public void checkCurrentUser(ArrayList<String> userInfo) {
+        // [START check_current_user]
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // User is signed in
+            String email = user.getEmail();
+            String uid = user.getUid();
+            String name = user.getDisplayName();
+            //emailAdd = email;
+            userInfo.add(email);
+            userInfo.add(uid);
+
+
+        } else {
+            // No user is signed in
+
+        }
+        // [END check_current_user]
     }
 
 
+    private void loadReviewData(){
 
-    private void loadData(){
-
-        dao.get().addValueEventListener(new ValueEventListener() {
+        reviewDAO.get().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for(DataSnapshot data : snapshot.getChildren()){
                     Review review = data.getValue(Review.class);
-                    Review reviewFull = new Review(review.getReviewText(),review.getReviewAuthor(),ozCode );
+                    Review reviewFull = new Review(review.getReviewText(),review.getReviewAuthor(), ozCode);
                     reviewList.add(reviewFull);
-
                 }
-
                 adapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.e(TAG, "Failed to load Review List");
+            }
+        });
+    }
+
+    private void createUserHistoryElement(String nUserActionStr, String nUserEmail){
+        UserAction userAction = new UserAction(nUserActionStr, nUserEmail);
+        userActionDAO.createUserAction(userAction).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Log.d(TAG, "Success add User Action");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.e(TAG, "Failed to create User Action");
             }
         });
     }

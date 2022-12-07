@@ -2,6 +2,7 @@ package com.example.choose2help4175.DAO;
 
 
 import com.example.choose2help4175.model.Review;
+import com.example.choose2help4175.model.UserAction;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -28,3 +29,4 @@ public class ReviewDAO {
         return dbReference.removeValue();
     }
 }
+

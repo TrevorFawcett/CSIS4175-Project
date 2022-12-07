@@ -1,5 +1,6 @@
 package com.example.choose2help4175.DAO;
 
+import com.example.choose2help4175.model.UserAction;
 import com.example.choose2help4175.model.UserData;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
@@ -14,9 +15,9 @@ public class UserActionDAO {
         dbReference = db.getReference(UserData.class.getSimpleName());
     }
 
-    public Task<Void> createUserAction(UserData userAction, String uid){
+    public Task<Void> createUserAction(UserAction userAction){
         //return dbReference.push().setValue(userData);
-        return dbReference.child(uid).setValue(userAction);
+        return dbReference.push().setValue(userAction);
     }
 
     public Query get(){
@@ -30,4 +31,6 @@ public class UserActionDAO {
     public Task<Void> remove() {
         return dbReference.removeValue();
     }
+
+
 }

@@ -107,7 +107,6 @@ public class FreeServiceListsActivity extends BaseActivity implements FreeServic
         btnFSBringList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 loadData();
                 btnFSBringList.setText("Reload the list");
                 bringData = false;
