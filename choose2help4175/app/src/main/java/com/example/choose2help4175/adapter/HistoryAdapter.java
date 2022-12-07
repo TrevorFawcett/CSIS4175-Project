@@ -37,7 +37,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyV
     @Override
     public void onBindViewHolder(@NonNull historyViewHolder holder, int position) {
         holder.txtViewAction.setText(userActionList.get(position).getUserAction());
-        holder.txtViewActionDate.setText(userActionList.get(position).getActionDate());
+
     }
 
     @Override
@@ -48,12 +48,12 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.historyV
     public class historyViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtViewAction;
-        TextView txtViewActionDate;
+
 
         public historyViewHolder(@NonNull View itemView) {
             super(itemView);
             txtViewAction = itemView.findViewById(R.id.txtViewAction);
-            txtViewActionDate = itemView.findViewById(R.id.txtViewActionDate);
+
         }
     }
 }

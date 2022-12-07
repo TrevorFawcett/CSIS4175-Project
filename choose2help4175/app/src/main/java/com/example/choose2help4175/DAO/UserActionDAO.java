@@ -12,7 +12,7 @@ public class UserActionDAO {
 
     public UserActionDAO(){
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-        dbReference = db.getReference(UserData.class.getSimpleName());
+        dbReference = db.getReference(UserAction.class.getSimpleName());
     }
 
     public Task<Void> createUserAction(UserAction userAction){
