@@ -40,13 +40,6 @@ public class FreeServiceListsActivity extends BaseActivity implements FreeServic
     Button btnRegisterService;
     FreeServiceAdapter adapter;
     FreeServiceDAO dao;
-    String fsNameR;
-    int fsImgR;
-    String fsDateR;
-    String fsShopNameR;
-    String fsTimeR;
-    String fsAddressR;
-    String fsDescriptionR;
     boolean bringData = false;
 
     ArrayList<FreeService> fsList = new ArrayList<>();
@@ -60,11 +53,6 @@ public class FreeServiceListsActivity extends BaseActivity implements FreeServic
         activityFreeserviceListsBinding = ActivityFreeserviceListsBinding.inflate(getLayoutInflater());
         View rootView = getLayoutInflater().inflate(R.layout.activity_freeservice_lists, frameLayout);
 
-//        recyclerView = findViewById(R.id.freeServiceRecyclerView);
-//        txtFreeServiceTitle = findViewById(R.id.txtTitleFreeService);
-//        btnFSBringList = findViewById(R.id.btnFSBringList);
-//        btnRegisterService = findViewById(R.id.btnRegisterService);
-
         recyclerView = rootView.findViewById(R.id.freeServiceRecyclerView);
         txtFreeServiceTitle = rootView.findViewById(R.id.txtTitleFreeService);
         btnFSBringList = rootView.findViewById(R.id.btnFSBringList);
@@ -72,6 +60,7 @@ public class FreeServiceListsActivity extends BaseActivity implements FreeServic
 
         if(bringData == false){
             btnFSBringList.setText("Bring the List");
+            btnFSBringList.setEnabled(true);
             bringData = true;
         }
 
@@ -93,27 +82,15 @@ public class FreeServiceListsActivity extends BaseActivity implements FreeServic
             }
         });
 
-//        btnFSBringList.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(FreeServiceListsActivity.this, "Clicking bring list" , Toast.LENGTH_SHORT).show();
-//                removeExistingData();
-//                createFreeService();
-//
-//                loadData();
-//            }
-//        });
-
         btnFSBringList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 loadData();
-                btnFSBringList.setText("Reload the list");
+//                btnFSBringList.setText("Reload the list");
+                btnFSBringList.setEnabled(false);
                 bringData = false;
             }
         });
-
-
     }
 
     private void loadData(){

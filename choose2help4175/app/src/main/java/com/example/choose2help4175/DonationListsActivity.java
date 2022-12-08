@@ -51,18 +51,13 @@ public class DonationListsActivity extends BaseActivity implements OrganizationA
         activityDonationListsBinding = ActivityDonationListsBinding.inflate(getLayoutInflater());
         View rootView = getLayoutInflater().inflate(R.layout.activity_donation_lists, frameLayout);
 
-//        txtOrganizationTitle = findViewById(R.id.txtTitleOZList);
-//        recyclerView = findViewById(R.id.OZRecyclerView);
-//        btnBringData = findViewById(R.id.btnOZBringList);
-
         txtOrganizationTitle = rootView.findViewById(R.id.txtTitleOZList);
         recyclerView = rootView.findViewById(R.id.OZRecyclerView);
         btnBringData = rootView.findViewById(R.id.btnOZBringList);
 
-//        txtOrganizationTitle.setText("Organization List");
-
         if(bringData == false){
             btnBringData.setText("Bring the List");
+            btnBringData.setEnabled(true);
             bringData = true;
         }
 
@@ -84,7 +79,8 @@ public class DonationListsActivity extends BaseActivity implements OrganizationA
             public void onClick(View view) {
 
                 loadData();
-                btnBringData.setText("Reload the list");
+//                btnBringData.setText("Reload the list");
+                btnBringData.setEnabled(false);
                 bringData = false;
             }
         });

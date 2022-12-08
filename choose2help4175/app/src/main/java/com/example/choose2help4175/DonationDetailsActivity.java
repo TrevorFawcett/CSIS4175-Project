@@ -72,15 +72,6 @@ public class DonationDetailsActivity extends BaseActivity {
         activityDonationDetailsBinding = ActivityDonationDetailsBinding.inflate(getLayoutInflater());
         View rootView = getLayoutInflater().inflate(R.layout.activity_donation_details, frameLayout);
 
-//        imgOz = findViewById(R.id.imgOZ);
-//        txtOzTitle = findViewById(R.id.txtTitleOZ);
-//        txtOzDescription = findViewById(R.id.txtDescriptionOZ);
-//        txtOzAddress = findViewById(R.id.txtAddressOZ);
-//        txtOzEmail = findViewById(R.id.txtEmailOZ);
-//        txtOzPhoneNumber = findViewById(R.id.txtPhoneOZ);
-//        btnDonation = findViewById(R.id.btnDonationOZ);
-//        btnVolunteer = findViewById(R.id.btnVolunteerOZ);
-
         imgOz = rootView.findViewById(R.id.imgOZ);
         txtOzTitle = rootView.findViewById(R.id.txtTitleOZ);
         txtOzDescription = rootView.findViewById(R.id.txtDescriptionOZ);

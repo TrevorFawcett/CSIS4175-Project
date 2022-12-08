@@ -37,12 +37,6 @@ public class FreeServiceReservationActivity extends BaseActivity {
         activityFreeServiceReservationBinding = ActivityFreeServiceReservationBinding.inflate(getLayoutInflater());
         View rootView = getLayoutInflater().inflate(R.layout.activity_free_service_reservation, frameLayout);
 
-//        resBtn = findViewById(R.id.btnReservationREV);
-//        resFName = findViewById(R.id.txtFirstNameREV);
-//        resLName = findViewById(R.id.txtLastNameREV);
-//        resPhone = findViewById(R.id.txtPhoneNumberREV);
-//        resEmail = findViewById(R.id.txtEmailREV);
-
         resBtn = rootView.findViewById(R.id.btnReservationREV);
         resFName = rootView.findViewById(R.id.txtFirstNameREV);
         resLName = rootView.findViewById(R.id.txtLastNameREV);
@@ -74,10 +68,6 @@ public class FreeServiceReservationActivity extends BaseActivity {
             }
         });
 
-
-        //setContentView(R.layout.activity_free_service_reservation);
-//        activityFreeServiceReservationBinding = ActivityFreeServiceReservationBinding.inflate(getLayoutInflater());
-//        View rootView = getLayoutInflater().inflate(R.layout.activity_free_service_reservation, frameLayout);
 
         //data from FreeServiceList activity, When user click one item in the Free Service list
         SharedPreferences sp = getSharedPreferences("FreeServiceContents",0);

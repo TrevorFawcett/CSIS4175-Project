@@ -73,16 +73,6 @@ public class WriteReviewActivity extends BaseActivity {
                 Toast.makeText(WriteReviewActivity.this, "Review created", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(WriteReviewActivity.this, DonationDetailsActivity.class);
                 startActivity(intent);
-
-                // redirect back to Details activity after 2 seconds of review submission
-//                Handler handler = new Handler();
-//                handler.postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        Intent intent = new Intent(WriteReviewActivity.this, DonationDetailsActivity.class);
-//                        startActivity(intent);
-//                    }
-//                }, 2000);
             }
         });
     }

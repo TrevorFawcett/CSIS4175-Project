@@ -126,13 +126,6 @@ public class UserDisplayActivity extends BaseActivity implements UserSettingsAda
 
                 userList.clear();
 
-                /*
-                for(DataSnapshot data : snapshot.getChildren()){
-
-                    UserData user = data.getValue(UserData.class);
-                    userList.add(user);
-                } */
-
                 if (snapshot.getValue() == null) {
                     // The child doesn't exist
                     createUser(userInfo);

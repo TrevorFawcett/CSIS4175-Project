@@ -32,8 +32,6 @@ public class HistoryActivity extends BaseActivity {
     UserActionDAO userActionDAO;
     HistoryAdapter adapter;
     Button btnSeeHistory;
-    String userEmail;
-    String uid;
     String email;
 
     ArrayList<UserAction> userActionList = new ArrayList<>();
@@ -70,13 +68,6 @@ public class HistoryActivity extends BaseActivity {
                 loadData();
             }
         });
-
-        //String userName= userInfo.get(2);
-
-        //Log.d(this.getClass().getSimpleName(), userEmail.getText().toString());
-        //Toast.makeText(this, "User name: " + userName,
-          //      Toast.LENGTH_LONG).show();
-
 
     }
 
