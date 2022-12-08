@@ -35,7 +35,6 @@ public class HistoryActivity extends BaseActivity {
     String userEmail;
 
     ArrayList<UserAction> userActionList = new ArrayList<>();
-    ArrayList<UserAction> allUserActionList = new ArrayList<>();
 
     private final String TAG = "HISTORYACTIVITY";
 
@@ -85,7 +84,9 @@ public class HistoryActivity extends BaseActivity {
                 for(DataSnapshot data : snapshot.getChildren()){
                     Log.d("HISTORY", "We are at line 89");
                     UserAction userAction = data.getValue(UserAction.class);
-                    UserAction userActionFull = new UserAction(userAction.getUserId(),userAction.getUserAction());
+                    UserAction userActionFull = new UserAction(userAction.getUserAction());
+                    String uA = userActionFull.getUserId();
+                    Log.d("HISTORY", uA);
                     userActionList.add(userActionFull);
                 }
                 adapter.notifyDataSetChanged();

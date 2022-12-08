@@ -136,6 +136,7 @@ public class DonationDetailsActivity extends BaseActivity {
             public void onClick(View view) {
                 userActionStr = "User donated to " +ozTitle;
                 createUserHistoryElement(userActionStr, userEmail);
+                Log.d("USERACTION", "userActionStr");
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(ozDonationURL));
                 startActivity(i);
@@ -147,6 +148,7 @@ public class DonationDetailsActivity extends BaseActivity {
             public void onClick(View view) {
                 userActionStr = "User volunteered at " +ozTitle;
                 createUserHistoryElement(userActionStr, userEmail);
+                Log.d("USERACTION", userActionStr);
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(ozVolunteerURL));
                 startActivity(i);
