@@ -33,6 +33,8 @@ public class HistoryActivity extends BaseActivity {
     HistoryAdapter adapter;
     Button btnSeeHistory;
     String userEmail;
+    String uid;
+    String email;
 
     ArrayList<UserAction> userActionList = new ArrayList<>();
     ArrayList<UserAction> allUserActionList = new ArrayList<>();
@@ -86,10 +88,10 @@ public class HistoryActivity extends BaseActivity {
                     Log.d("HISTORY", "We are at line 89");
                     UserAction userAction = data.getValue(UserAction.class);
                     UserAction userActionFull = new UserAction(userAction.getUserAction());
-                    //Log.d("HISTORY_userid",": " + userAction.getUserId());
+                    Log.d("HISTORY_userid",": " + userAction.getUserId());
                     Log.d("HISTORY_userAction", ": " +userAction.getUserAction());
 
-                    userActionList.add(userActionFull);
+                        userActionList.add(userActionFull);
                 }
                 adapter.notifyDataSetChanged();
             }
@@ -102,11 +104,13 @@ public class HistoryActivity extends BaseActivity {
     }
     public void checkCurrentUser(ArrayList<String> userInfo) {
         // [START check_current_user]
+//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             // User is signed in
 
-            String email = user.getEmail();
+//            String email = user.getEmail();
+            email = user.getEmail();
             String uid = user.getUid();
 
             UserData currUser = new UserData(email);

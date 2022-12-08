@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.choose2help4175.databinding.ActivityFreeServiceReservationBinding;
+import com.example.choose2help4175.databinding.ActivityFreeserviceListsBinding;
 import com.example.choose2help4175.model.ReservationServiceHelper;
 import com.example.choose2help4175.ui.navigation.BaseActivity;
 import com.google.android.material.textfield.TextInputLayout;
@@ -32,13 +33,21 @@ public class FreeServiceReservationActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_free_service_reservation);
+//        setContentView(R.layout.activity_free_service_reservation);
+        activityFreeServiceReservationBinding = ActivityFreeServiceReservationBinding.inflate(getLayoutInflater());
+        View rootView = getLayoutInflater().inflate(R.layout.activity_free_service_reservation, frameLayout);
 
-        resBtn = findViewById(R.id.btnReservationREV);
-        resFName = findViewById(R.id.txtFirstNameREV);
-        resLName = findViewById(R.id.txtLastNameREV);
-        resPhone = findViewById(R.id.txtPhoneNumberREV);
-        resEmail = findViewById(R.id.txtEmailREV);
+//        resBtn = findViewById(R.id.btnReservationREV);
+//        resFName = findViewById(R.id.txtFirstNameREV);
+//        resLName = findViewById(R.id.txtLastNameREV);
+//        resPhone = findViewById(R.id.txtPhoneNumberREV);
+//        resEmail = findViewById(R.id.txtEmailREV);
+
+        resBtn = rootView.findViewById(R.id.btnReservationREV);
+        resFName = rootView.findViewById(R.id.txtFirstNameREV);
+        resLName = rootView.findViewById(R.id.txtLastNameREV);
+        resPhone = rootView.findViewById(R.id.txtPhoneNumberREV);
+        resEmail = rootView.findViewById(R.id.txtEmailREV);
 
         resBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,8 +76,8 @@ public class FreeServiceReservationActivity extends BaseActivity {
 
 
         //setContentView(R.layout.activity_free_service_reservation);
-        activityFreeServiceReservationBinding = ActivityFreeServiceReservationBinding.inflate(getLayoutInflater());
-        View rootView = getLayoutInflater().inflate(R.layout.activity_free_service_reservation, frameLayout);
+//        activityFreeServiceReservationBinding = ActivityFreeServiceReservationBinding.inflate(getLayoutInflater());
+//        View rootView = getLayoutInflater().inflate(R.layout.activity_free_service_reservation, frameLayout);
 
         //data from FreeServiceList activity, When user click one item in the Free Service list
         SharedPreferences sp = getSharedPreferences("FreeServiceContents",0);

@@ -30,10 +30,9 @@
             android:title="Free Service"
             />
         <item
-            android:id="@+id/nav_reserve"
+            android:id="@+id/nav_register"
             android:icon="@drawable/ic_baseline_handyman_24"
-            android:title="Reserve a free service"
-            />
+            android:title="Resigter a free service" />
         <item
             android:id="@+id/nav_donationhistory"
             android:icon="@drawable/ic_baseline_history_24"

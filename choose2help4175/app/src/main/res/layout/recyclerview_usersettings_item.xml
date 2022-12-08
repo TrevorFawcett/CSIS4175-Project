@@ -6,11 +6,11 @@
 
     <TextView
         android:id="@+id/txtUserSettingItem"
-        android:layout_width="268dp"
-        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
         android:layout_weight="1"
         android:gravity="center_horizontal|center_vertical"
-        android:text= "blank"
+        android:text="blank"
         android:textSize="16sp"
         android:textStyle="bold" />
 

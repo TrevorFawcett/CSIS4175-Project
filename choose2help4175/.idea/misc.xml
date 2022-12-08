@@ -36,8 +36,11 @@
         <entry key="..\:/Users/Jericho/Documents/GitHub/CSIS4175-Project/choose2help4175/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Jericho/Documents/GitHub/CSIS4175-Project/choose2help4175/app/src/main/res/menu/main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Jericho/Documents/GitHub/CSIS4175-Project/choose2help4175/app/src/main/res/menu/main_activity2.xml" value="0.36666666666666664" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/drawable/side_nav_bar.xml" value="0.1215" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_base.xml" value="0.12685185185185185" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_blank.xml" value="0.25416666666666665" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_charity_map.xml" value="0.25416666666666665" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_donation_details.xml" value="0.4" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_donation_lists.xml" value="0.1" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_donation_service_lists.xml" value="0.25416666666666665" />
@@ -50,9 +53,21 @@
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_register_free_service_2.xml" value="0.36666666666666664" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_register_free_service_old.xml" value="0.35743589743589743" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_signup.xml" value="0.25416666666666665" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_user_display.xml" value="0.2111111111111111" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/activity_user_form.xml" value="0.2111111111111111" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/app_bar_base.xml" value="0.12685185185185185" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/fragment_free_service.xml" value="0.264" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/fragment_gallery.xml" value="0.12685185185185185" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/fragment_home.xml" value="0.12685185185185185" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/fragment_slideshow.xml" value="0.12685185185185185" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/layout_history_element.xml" value="0.17407407407407408" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/layout_review.xml" value="0.12685185185185185" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/main_drawer_header.xml" value="0.12685185185185185" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/nav_header_main.xml" value="0.12685185185185185" />
         <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/recyclerview_freeservice_item.xml" value="0.16018518518518518" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/layout/recyclerview_usersettings_item.xml" value="0.1" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/menu/activity_base_drawer.xml" value="0.2796875" />
+        <entry key="..\:/temp/fall2022/csis4175/github/CSIS4175_GProject/CSIS4175-Project/choose2help4175/app/src/main/res/menu/base.xml" value="0.12685185185185185" />
         <entry key="app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_base.xml" value="0.165" />
