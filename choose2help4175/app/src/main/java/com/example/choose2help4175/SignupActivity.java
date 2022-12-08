@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+//import com.example.choose2help4175.ui.navigation.DashboardActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -97,12 +98,13 @@ public class SignupActivity extends AppCompatActivity {
                             Log.d(TAG, "Authentication failed." + task.getException());
 
                         } else {
+                            Toast.makeText(getApplicationContext(), "You are successfully Registered !!", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(SignupActivity.this, DashboardActivity.class));
                             finish();
                         }
                     }
                 });
-        Toast.makeText(getApplicationContext(), "You are successfully Registered !!", Toast.LENGTH_SHORT).show();
+
 
     }
 

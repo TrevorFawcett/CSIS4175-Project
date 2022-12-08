@@ -32,7 +32,7 @@
         <item
             android:id="@+id/nav_register"
             android:icon="@drawable/ic_baseline_handyman_24"
-            android:title="Resigter a free service" />
+            android:title="Register a free service" />
         <item
             android:id="@+id/nav_donationhistory"
             android:icon="@drawable/ic_baseline_history_24"
