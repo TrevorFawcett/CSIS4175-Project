@@ -7,148 +7,146 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="0dp"
     android:fillViewport="true">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DonationDetailsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DonationDetailsActivity">
 
 
-    <ImageView
-        android:id="@+id/imgOZ"
-        android:layout_width="wrap_content"
-        android:layout_height="270dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dewc" />
+        <ImageView
+            android:id="@+id/imgOZ"
+            android:layout_width="wrap_content"
+            android:layout_height="270dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/dewc" />
 
-    <TextView
-        android:id="@+id/txtTitleOZ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/organizationName"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgOZ" />
-
-
-    <TextView
-        android:id="@+id/txtDescriptionOZ"
-        android:layout_width="380dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/organizationDescription"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitleOZ" />
-
-    <TextView
-        android:id="@+id/txtAddressOZ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/organizationAddress"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescriptionOZ" />
+        <TextView
+            android:id="@+id/txtTitleOZ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/organizationName"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgOZ" />
 
 
-    <TextView
-        android:id="@+id/txtEmailOZ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/organizationEmail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAddressOZ" />
+        <TextView
+            android:id="@+id/txtDescriptionOZ"
+            android:layout_width="380dp"
+            android:layout_height="82dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/organizationDescription"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitleOZ" />
 
-    <TextView
-        android:id="@+id/txtPhoneOZ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/organizationPhone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAddressOZ" />
-
-    <Button
-        android:id="@+id/btnDonationOZ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
-        android:background="@android:color/holo_red_light"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:foregroundTint="@android:color/holo_red_light"
-        android:text="@string/btnDonation"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toStartOf="@+id/btnVolunteerOZ"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmailOZ" />
-
-    <Button
-        android:id="@+id/btnVolunteerOZ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:background="@android:color/holo_red_light"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:foregroundTint="@android:color/holo_red_light"
-        android:text="@string/btnVolunteer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmailOZ"
-        tools:textColor="@android:color/white" />
-
-    <Button
-        android:id="@+id/btnAddReview"
-        android:layout_width="115dp"
-        android:layout_height="57dp"
-        android:text="Add Review"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerViewReviews"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDonationOZ"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/btnSeeReviews"
-        android:layout_width="124dp"
-        android:layout_height="52dp"
-        android:text="See Reviews"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerViewReviews"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.917"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnVolunteerOZ" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewReviews"
-        android:layout_width="364dp"
-        android:layout_height="102dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginRight="44dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent" >
+        <TextView
+            android:id="@+id/txtAddressOZ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/organizationAddress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDescriptionOZ" />
 
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <TextView
+            android:id="@+id/txtEmailOZ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/organizationEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAddressOZ" />
+
+        <TextView
+            android:id="@+id/txtPhoneOZ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/organizationPhone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.485"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAddressOZ" />
+
+        <Button
+            android:id="@+id/btnDonationOZ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/holo_red_light"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:foregroundTint="@android:color/holo_red_light"
+            android:text="@string/btnDonation"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/btnVolunteerOZ"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEmailOZ" />
+
+        <Button
+            android:id="@+id/btnVolunteerOZ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:background="@android:color/holo_red_light"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:foregroundTint="@android:color/holo_red_light"
+            android:text="@string/btnVolunteer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtEmailOZ"
+            tools:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnAddReview"
+            android:layout_width="115dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="8dp"
+            android:text="Add Review"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnDonationOZ" />
+
+        <Button
+            android:id="@+id/btnSeeReviews"
+            android:layout_width="122dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="23dp"
+            android:text="See Reviews"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnVolunteerOZ" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewReviews"
+            android:layout_width="364dp"
+            android:layout_height="102dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.34"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAddReview">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
