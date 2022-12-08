@@ -4,29 +4,39 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.core.view.MenuItemCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.choose2help4175.CharityMap;
+import com.example.choose2help4175.DashboardActivity;
 import com.example.choose2help4175.DonationListsActivity;
 import com.example.choose2help4175.FreeServiceListsActivity;
+import com.example.choose2help4175.FreeServiceReservationActivity;
 import com.example.choose2help4175.HistoryActivity;
 import com.example.choose2help4175.R;
 import com.example.choose2help4175.RegisterFreeServiceActivity;
 import com.example.choose2help4175.UserDisplayActivity;
+import com.example.choose2help4175.UserFormActivity;
 import com.example.choose2help4175.databinding.ActivityBaseBinding;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -95,8 +105,8 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         userEmail.setText(userInfo.get(0).toString());
 
         Log.d(this.getClass().getSimpleName(), userEmail.getText().toString());
-//        Toast.makeText(this, "User email: " + userEmail.getText().toString(),
-//                Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "User email: " + userEmail.getText().toString(),
+                Toast.LENGTH_LONG).show();
 
 
         menuItem.setChecked(true);
@@ -105,8 +115,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_home:
                 // Need to change this to another activity.
                 // I can't redirect to map because the app crashes.
-                Intent switchToHomeIntent = new Intent(this, CharityMap.class);
+                Intent switchToHomeIntent = new Intent(this, DashboardActivity.class);
                 startActivity(switchToHomeIntent);
+                break;
 
             case R.id.nav_map:
                 Intent switchToMapIntent = new Intent(this, CharityMap.class);
@@ -152,7 +163,6 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             // User is signed in
             String email = user.getEmail();
             String uid = user.getUid();
-
             //String name = user.getDisplayName();
             //emailAdd = email;
             userInfo.add(email);

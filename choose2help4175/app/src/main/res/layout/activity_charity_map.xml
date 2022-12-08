@@ -19,7 +19,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:context="com.example.choose2help4175.CharityMap"
-        tools:ignore="MissingConstraints,UnknownId" />
+        tools:ignore="MissingConstraints,UnknownId"
+        />
 
     <TextView
         android:layout_width="169dp"

@@ -41,7 +41,7 @@
             android:exported="false"
             android:label="@string/title_activity_charity_map" />
         <activity
-            android:name=".ui.navigation.DashboardActivity"
+            android:name=".DashboardActivity"
             android:exported="true"
             android:theme="@style/Theme.Choose2help4175.NoActionBar"/>
 

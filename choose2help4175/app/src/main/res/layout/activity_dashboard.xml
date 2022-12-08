@@ -4,16 +4,116 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.navigation.DashboardActivity">
+    tools:context=".DashboardActivity">
 
+
+    <Button
+        android:id="@+id/homeSettingsBtn"
+        android:layout_width="156dp"
+        android:layout_height="139dp"
+        android:layout_marginBottom="40dp"
+        android:text="View your settings"
+        android:backgroundTint="#56AE85"
+        android:gravity="bottom|left"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/homeHistoryBtn"
+        android:layout_width="156dp"
+        android:layout_height="139dp"
+        android:layout_marginBottom="40dp"
+        android:text="View Donation History"
+        android:backgroundTint="#FF8960"
+        android:gravity="bottom|left"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/homeSettingsBtn"
+        app:layout_constraintHorizontal_bias="0.352"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/homeRegBtn"
+        android:layout_width="156dp"
+        android:layout_height="139dp"
+        android:layout_marginBottom="36dp"
+        android:text="Register a Free Service"
+        android:backgroundTint="#E9BA3A"
+        android:gravity="bottom|left"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/homeSettingsBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/homeListBtn"
+        android:layout_width="156dp"
+        android:layout_height="139dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="36dp"
+        android:text="Browse The List Of Services"
+        android:backgroundTint="#4C69EB"
+        android:gravity="bottom|left"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/homeHistoryBtn"
+        app:layout_constraintEnd_toStartOf="@+id/homeRegBtn"
+        app:layout_constraintHorizontal_bias="0.313"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/homeDonationBtn"
+        android:layout_width="156dp"
+        android:layout_height="139dp"
+        android:layout_marginBottom="36dp"
+        android:text="Make a Quick Donation"
+        android:backgroundTint="#19B8B5"
+        android:gravity="bottom|left"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/homeRegBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/greetingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/homeCharBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.71" />
+
+    <Button
+        android:id="@+id/homeCharBtn"
+        android:layout_width="156dp"
+        android:layout_height="139dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="#FF7F7F"
+        android:text="Find a Charity Near You"
+        android:gravity="bottom|left"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/homeListBtn"
+        app:layout_constraintEnd_toStartOf="@+id/homeDonationBtn"
+        app:layout_constraintHorizontal_bias="0.352"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dashboard"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="12dp"
+        android:text="What can we do for you today?"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/greetingTextView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

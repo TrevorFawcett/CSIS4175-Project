@@ -17,9 +17,12 @@ import android.widget.FrameLayout;
 
 import com.example.choose2help4175.adapter.UserSettingsAdapter;
 import com.example.choose2help4175.databinding.ActivityBaseBinding;
+import com.example.choose2help4175.databinding.ActivityCharityMapBinding;
+import com.example.choose2help4175.databinding.ActivityDonationDetailsBinding;
 import com.example.choose2help4175.ui.navigation.BaseActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -28,7 +31,9 @@ import com.google.android.material.navigation.NavigationView;
 
 public class CharityMap extends BaseActivity implements OnMapReadyCallback, UserSettingsAdapter.ListItemListener {
 
-    // I had to manually add navigation drawer, because I couldn't extend BaseActivity
+    ActivityCharityMapBinding activityCharityMapBinding;
+
+
     private GoogleMap mMap;
     protected FrameLayout frameLayout;
     private Context context;
@@ -46,13 +51,15 @@ public class CharityMap extends BaseActivity implements OnMapReadyCallback, User
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_charity_map);
 
-
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+        SupportMapFragment mapFragment = (SupportMapFragment)getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
     }
 
     /**
@@ -66,6 +73,10 @@ public class CharityMap extends BaseActivity implements OnMapReadyCallback, User
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
+
+
+
         mMap = googleMap;
 
         char1 = (Button) findViewById(R.id.char1Btn);
@@ -135,8 +146,6 @@ public class CharityMap extends BaseActivity implements OnMapReadyCallback, User
             }
         });
 
-        // Add a marker in Sydney and move the camera
-
 
     }
 
@@ -144,4 +153,6 @@ public class CharityMap extends BaseActivity implements OnMapReadyCallback, User
     public void onListItemClick(int position) {
 
     }
+
+
 }
