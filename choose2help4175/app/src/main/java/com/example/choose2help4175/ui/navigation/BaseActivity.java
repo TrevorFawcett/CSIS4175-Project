@@ -95,8 +95,8 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         userEmail.setText(userInfo.get(0).toString());
 
         Log.d(this.getClass().getSimpleName(), userEmail.getText().toString());
-        Toast.makeText(this, "User email: " + userEmail.getText().toString(),
-                Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "User email: " + userEmail.getText().toString(),
+//                Toast.LENGTH_LONG).show();
 
 
         menuItem.setChecked(true);
@@ -152,6 +152,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             // User is signed in
             String email = user.getEmail();
             String uid = user.getUid();
+
             //String name = user.getDisplayName();
             //emailAdd = email;
             userInfo.add(email);
